@@ -1,0 +1,24 @@
+/* HERO BANNER SECTION */
+.hero-banner {
+    background: url("../images/toa-heftiba--lpUDp2K0a8-unsplash.jpg") center no-repeat;
+    background-size: contain;   /* Prevents stretching */
+    height: 90vh;               
+    background-color: black;
+    position: relative;
+}
+/* HERO TEXT */
+.hero-text {
+    position: absolute;
+    bottom: 30%;
+    left: 3%;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+}
