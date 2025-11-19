@@ -20,28 +20,38 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}">Home
-                        <span class="sr-only">(current)</span></a>
+            {% with request.resolver_match.url_name as url_name %}
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item {% if url_name == 'home' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'menu' %}">Menu
-                    </a>
+
+                <li class="nav-item {% if url_name == 'menu' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                 </li>
-                <li class="nav-item dropdown">
+
+                <li
+                    class="nav-item dropdown {% if url_name == 'about' or url_name == 'about_story' or url_name == 'about_gallery' or url_name == 'about_collaborations' %}active{% endif %}">
                     <a class="nav-link dropdown-toggle" href="{% url 'about' %}" role="button" data-toggle="dropdown"
                         aria-expanded="false">About us</a>
 
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">How it all started</a>
-                        <a class="dropdown-item" href="#">Gallery</a>
+                        <a class="dropdown-item" href="{% url 'about' %}">About NeoEats</a>
+                        <a class="dropdown-item" href="{% url 'about_story' %}">How it all started</a>
+                        <a class="dropdown-item" href="{% url 'about_gallery' %}">Gallery</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Our collaborations with farmers</a>
+                        <a class="dropdown-item" href="{% url 'about_collaborations' %}">Our collaborations with
+                            farmers</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'book_table' %}">Book a table</a></li>
+
+                <li class="nav-item {% if url_name == 'book_table' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'book_table' %}">Book a table</a>
+                </li>
+
             </ul>
+            {% endwith %}
         </div>
     </nav>
 

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Gallery</h1>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/jason-leung--eKZLpj7U0E-unsplash.jpg' %}" class="card-img-top"
+                    alt="Chef preparing a dish">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/louis-hansel-QDQbw6_zCqo-unsplash.jpg' %}" class="card-img-top"
+                    alt="Plated dish">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/jed-owen-q6Y8Xr3SoQA-unsplash.jpg' %}" class="card-img-top"
+                    alt="Meat platter for two">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg' %}" class="card-img-top"
+                    alt="Honeyglazed french toast with berries">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/adrien-olichon-ZgREXhl8ER0-unsplash.jpg' %}" class="card-img-top"
+                    alt="Cozy interior of NeoEats restaurant">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/sebastian-coman-photography-eBmyH7oO5wY-unsplash.jpg' %}"
+                    class="card-img-top" alt="Chef preparing a dish">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/davide-cantelli-jpkfc5_d-DI-unsplash.jpg' %}" class="card-img-top"
+                    alt="Plated dish">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/engin-akyurt-vUlsoVpTbZs-unsplash.jpg' %}" class="card-img-top"
+                    alt="Chef flambeing a dish">
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/q-u-i-n-g-u-y-e-n-Zrp9b3PMIy8-unsplash.jpg' %}" class="card-img-top"
+                    alt="Restaurant bar area">
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
