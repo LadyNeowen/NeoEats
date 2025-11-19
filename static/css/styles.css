@@ -1,4 +1,12 @@
-/* HERO BANNER SECTION */
+/* No horizontal scroll */
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;   /* 👈 this is the big one */
+}
+
+/* Hero Banner Section */
 .hero-banner {
     background: url("../images/toa-heftiba--lpUDp2K0a8-unsplash.jpg") center no-repeat;
     background-size: contain;   /* Prevents stretching */
@@ -6,7 +14,7 @@
     background-color: black;
     position: relative;
 }
-/* HERO TEXT */
+/* Hero Text */
 .hero-text {
     position: absolute;
     bottom: 30%;
@@ -21,4 +29,62 @@
 
 .hero-text p {
     font-size: 1.5rem;
+}
+
+/* Navbar Area */
+
+.navbar {
+    background-color: rgba(226, 218, 218, 0.54) !important;
+    backdrop-filter: blur(6px); 
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-brand  {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #141111 !important;
+    
+}
+
+.navbar-brand:hover {
+    color: #f0c040 !important;   /* Gold hover effect */
+}
+
+.navbar-nav .nav-link {
+    color: #141111 !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f0c040 !important;   /* Gold hover effect */
+}
+
+.navbar-nav .active > .nav-link {
+    color: #f0c040 !important;   /* Highlight active page */
+}
+
+.navbar-nav > .nav-item > .nav-link {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 5px;
+}
+
+.dropdown-menu {
+    background-color: rgba(226, 218, 218, 0.97);
+    z-index: 1100;
+    max-width: 100vw;  /* Ensure it doesn't exceed viewport width */
+    overflow-wrap: break-word;
+    margin-top: 20px;
+}
+
+/* Dropdown items: smaller so they don't blow things up */
+.dropdown-menu .dropdown-item {
+    font-size: 15px;
+    font-weight: normal;
+    white-space: normal;  /* allow wrapping */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #f0c040 !important;
 }
