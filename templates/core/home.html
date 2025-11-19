@@ -1,6 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
 
 {% block content %}
-<h1>Welcome to NeoEats</h1>
-<p>Experience modern dining with a twist.</p>
+
+<div class="hero-banner"
+     style='background: url("{% static "images/toa-heftiba--lpUDp2K0a8-unsplash.jpg" %}") center/cover no-repeat;
+            height: 85vh;
+            position: relative;'>
+
+    <div style="position: absolute; bottom: 20%; left: 5%; color: white;">
+        <h1 style="font-size: 4rem; font-weight: bold;">Welcome to NeoEats</h1>
+        <p style="font-size: 1.5rem;">Fresh • Local • Modern Dining</p>
+    </div>
+</div>
+
 {% endblock %}
