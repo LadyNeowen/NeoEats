@@ -1,0 +1,1 @@
+web: gunicorn neoeats_project.wsgi
