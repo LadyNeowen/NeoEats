@@ -27,7 +27,7 @@ main {
 /* Hero Text */
 .hero-text {
     position: absolute;
-    bottom: 30%;
+    bottom: 25%;
     left: 3%;
     color: white;
 }
