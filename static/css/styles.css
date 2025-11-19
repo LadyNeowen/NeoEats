@@ -1,9 +1,19 @@
 /* No horizontal scroll */
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     max-width: 100%;
-    overflow-x: hidden;   /* 👈 this is the big one */
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 /* Hero Banner Section */
@@ -44,6 +54,7 @@ html, body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #141111 !important;
+    margin-left: 2.5%;
     
 }
 
@@ -87,4 +98,63 @@ html, body {
 
 .dropdown-menu .dropdown-item:hover {
     color: #f0c040 !important;
+}
+
+/* Footer Section */
+
+/* FOOTER */
+.site-footer {
+    background-color: #111;
+    color: #ddd;
+    padding: 20px 20px 10px;
+    margin-top: 78px;
+    
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 2%;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    color: #f0c040;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 3px 0;
+    color: #ccc;
+}
+
+.social-link {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    color: #f0c040;
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.footer-bg {
+    background-color: rgba(226, 218, 218, 0.54) !important;
+    padding-top: 20px;       /* this is your “colored margin” */
+    padding-bottom: 20px;  
 }
