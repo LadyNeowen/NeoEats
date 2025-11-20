@@ -1,25 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}About{% endblock %}
+{% block title %}About NeoEats{% endblock %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1>About NeoEats</h1>
-    <p>We are a modern restaurant focused on fresh, creative food.
-        Our mission is to provide an exceptional dining experience by combining locally sourced ingredients with
-        innovative culinary techniques.
-        And though it all started with a small team of passionate food enthusiasts, NeoEats has grown into a beloved
-        dining destination known for its vibrant flavors and welcoming atmosphere.
-    </p>
-
-    <hr>
+    <h1>{{ about_page.title }}</h1>
+    <p>{{ about_page.content|linebreaks }}</p>
 
     <h2 class="mt-4">Find Us Here!</h2>
-    <p>Aspsätravägen 9, 12737 Skärholmen:</p>
+    <p>Aspsätravägen 9, 12737 Skärholmen</p>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2037.6366036905904!2d17.92272701330617!3d59.28892457448875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f768560cabf9b%3A0xbd80becc4627b8a!2zQXNwc8OkdHJhdsOkZ2VuIDksIDEyNyAzNyBTa8OkcmhvbG1lbg!5e0!3m2!1ssv!2sse!4v1763567293044!5m2!1ssv!2sse"
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2037.6366036905922!2d17.922727013318916!3d59.288924574488725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f768560cabf9b%3A0xbd80becc4627b8a!2zQXNwc8OkdHJhdsOkZ2VuIDksIDEyNyAzNyBTa8OkcmhvbG1lbg!5e0!3m2!1ssv!2sse!4v1763661749539!5m2!1ssv!2sse"
             width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
