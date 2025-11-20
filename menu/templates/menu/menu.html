@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<div class="container menu-page">
+
+    <h1 class="text-center mb-5">Our Menu</h1>
+
+    <!-- Starters -->
+    <h3 class="menu-category">Starters</h3>
+
+    <div class="menu-item">
+        <h5>
+            Seasonal Soup
+            <span class="price">120 kr</span>
+        </h5>
+        <p class="description">Made with locally sourced vegetables.</p>
+    </div>
+
+    <div class="menu-item">
+        <h5>
+            Bruschetta
+            <span class="price">79 kr</span>
+        </h5>
+        <p class="description">Toasted bread with tomatoes, basil and olive oil.</p>
+    </div>
+
+    <div class="menu-item">
+        <h5>
+            Deer Carpaccio
+            <span class="price">179 kr</span>
+        </h5>
+        <p class="description">Deer carpaccio with dijonaise and pickled beetroot.</p>
+    </div>
+
+    <hr class="menu-divider">
+
+    <!-- Mains -->
+    <h3 class="menu-category">Main Courses</h3>
+
+    <div class="menu-item">
+        <h5>
+            Grilled Salmon
+            <span class="price">189 kr</span>
+        </h5>
+        <p class="description">Served with lemon butter sauce and roasted vegetables.</p>
+    </div>
+
+    <div class="menu-item">
+        <h5>
+            Deer Fillet
+            <span class="price">279 kr</span>
+        </h5>
+        <p class="description">With roasted vegetables, butter-glazed potatoes and blackberry sauce.</p>
+    </div>
+
+    <div class="menu-item">
+        <h5>
+            Homemade Gnocci
+            <span class="price">189 kr</span>
+        </h5>
+        <p class="description">Gnocci in red pesto, garlic & cream sauce with pumpkin seeds and parmesan.</p>
+    </div>
+
+    <hr class="menu-divider">
+
+    <!-- Desserts -->
+    <h3 class="menu-category">Desserts</h3>
+
+    <div class="menu-item">
+        <h5>
+            Chocolate Fondant
+            <span class="price">99 kr</span>
+        </h5>
+        <p class="description">Warm chocolate cake served with vanilla ice cream.</p>
+    </div>
+
+    <div class="menu-item">
+        <h5>
+            Panna Cotta<span class="icons">
+            <span class="price">89 kr</span>
+        </h5>
+        <p class="description">Vanilla panna cotta with berry compote.</p>
+    </div>
+
+    <div class="menu-item">
+        <h5>
+            Homemade Truffles
+            <span class="price">89 kr</span>
+        </h5>
+        <p class="description">Dark chocolate truffles made with rich cream.</p>
+    </div>
+
+    <!-- Menu Footer Notes -->
+    <div class="menu-notes-box">
+        <p class="menu-notes">
+            All dishes are lactose free. For vegan options, please notify the kitchen.
+        </p>
+    </div>
+    {% endblock %}
