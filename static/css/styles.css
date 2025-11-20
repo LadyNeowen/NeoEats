@@ -155,6 +155,73 @@ main {
 
 .footer-bg {
     background-color: rgba(226, 218, 218, 0.54) !important;
-    padding-top: 20px;       /* this is your “colored margin” */
+    padding-top: 20px;
     padding-bottom: 20px;  
+}
+
+/*Menu Page*/
+.menu-page {
+    padding-top: 60px;
+    padding-bottom:5px;
+    background-color: #222;
+}
+
+/*Page Title*/
+.menu-page h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #f0c040;
+}
+
+/*Category Headings*/
+.menu-category {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0c040;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/*Divider Line*/
+.menu-divider {
+    border-top: 1px solid #444;
+    margin: 40px 0;
+}
+
+/*Menu Items*/
+.menu-item {
+    margin-bottom: 20px;
+}
+
+.menu-item h5 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/*Price Styling*/
+.menu-item .price {
+    color: #f0c040;
+    font-weight: bold;
+}
+/*Description Styling*/
+.menu-item .description {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-left: 2px;
+}
+/*Notes from the restaurant*/
+.menu-notes-box {
+    background-color:#f0c040;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.menu-notes {
+    font-style: italic;
+    font-weight: bold;
+    color: #222;
 }
