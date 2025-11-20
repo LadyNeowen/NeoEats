@@ -1,13 +1,18 @@
 from django.shortcuts import render
+from .models import AboutPage, GalleryImage, CollaborationPage
+
 
 def about(request):
-    return render(request, "about/about.html")
+    about_page = AboutPage.objects.first()
+    return render(request, "about/about.html", {"about_page": about_page})
 
-def how_it_all_started(request):
-    return render(request, "about/how_it_all_started.html")
 
-def gallery(request):
-    return render(request, "about/gallery.html")
+def about_gallery(request):
+    images = GalleryImage.objects.all()
+    return render(request, "about/gallery.html", {"images": images})
 
-def collaborations_with_farmers(request):
-    return render(request, "about/collaborations_with_farmers.html")
+
+def about_collaborations(request):
+    collaboration_page = CollaborationPage.objects.first()
+    return render(request, "about/collaborations_with_farmers.html",
+                  {"collaboration_page": collaboration_page})
