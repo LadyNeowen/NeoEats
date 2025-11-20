@@ -168,7 +168,7 @@ main {
 
 /*Page Title*/
 .menu-page h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #f0c040;
 }
@@ -178,7 +178,7 @@ main {
     margin-top: 40px;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f0c040;
+    color:#f0c040;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -214,7 +214,7 @@ main {
 }
 /*Notes from the restaurant*/
 .menu-notes-box {
-    background-color:#f0c040;
+    background-color:#a31236;;
     text-align: center;
     padding-bottom: 0;
     margin-bottom: 0;
