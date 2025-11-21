@@ -29,7 +29,9 @@ We look forward to seeing you!
                 fail_silently=False,
             )
 
+            # Success message
             messages.success(request, "Your table has been booked! Check your email for confirmation.")
+
             return redirect("book_table")
     else:
         form = BookingForm()

@@ -272,3 +272,51 @@ main {
     text-align: center;
 }
 
+/* Booking Page */ 
+
+/* BOOKING PAGE */
+.booking-wrapper {
+    background: url("../images/toa-heftiba--lpUDp2K0a8-unsplash.jpg") center/cover no-repeat;
+    padding: 60px 0;
+}
+
+.booking-card {
+    background: rgba(255,255,255,0.90);
+    padding: 35px;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.booking-card h1 {
+    font-weight: bold;
+}
+
+.booking-sub {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.booking-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.booking-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #a31236;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.booking-btn:hover {
+    background-color: #7d0d2a;
+    cursor: pointer;
+}
