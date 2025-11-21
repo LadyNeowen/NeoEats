@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
+{% block body_class %}collab-bg-page{% endblock %}
+
 {% block title %}Working With Our Farmers{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>{{ collaboration_page.title }}</h1>
-    <p>{{ collaboration_page.content|linebreaks }}</p>
+<div class="collab-bg">
+    <div class="container mt-4 collab-container">
+        <h1>{{ collaboration_page.title }}</h1>
+        <p>{{ collaboration_page.content|linebreaks }}</p>
+    </div>
 </div>
 {% endblock %}

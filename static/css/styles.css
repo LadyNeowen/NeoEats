@@ -225,3 +225,26 @@ main {
     font-weight: bold;
     color: #222;
 }
+
+/*Collaborations Page*/
+
+.collab-bg-page main {
+    margin-bottom: 0 !important;
+}
+
+.collab-bg {
+    background: url("../images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg") center/cover no-repeat;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.collab-container {
+    background: rgba(255,255,255,0.85) !important;
+    padding: 30px;
+    padding bottom: 80px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
