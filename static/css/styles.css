@@ -115,13 +115,18 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
     margin-left: 2%;
 }
 
 .footer-section {
-    width: 30%;
-    min-width: 200px;
-    margin-bottom: 20px;
+    flex: 1;
+    min-width: 200px;  /* Ensures nice wrapping on smaller screens */
+}
+
+.footer-section iframe {
+    border-radius: 8px;
+    width: 100%;
 }
 
 .footer-section h4 {
@@ -226,6 +231,24 @@ main {
     color: #222;
 }
 
+
+/*About us page*/
+
+/* Applies ONLY on the About page because of body_class */
+.about-bg-right {
+    background: linear-gradient(to left, rgba(0,0,0,0.5), transparent 40%),
+                url("../images/sean-stratton-ObpCE_X3j6U-unsplash.jpg") right center / cover no-repeat;
+    background-attachment: fixed; /* Optional: makes it look modern */
+}
+
+/* Optional: make text more readable */
+.about-bg-right .container {
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 10px;
+}
+
 /*Collaborations Page*/
 
 .collab-bg-page main {
@@ -248,3 +271,4 @@ main {
     margin: 0 auto;
     text-align: center;
 }
+
