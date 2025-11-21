@@ -19,45 +19,34 @@ class BookingForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
+
         date = cleaned_data.get("date")
         time = cleaned_data.get("time")
 
         if not date or not time:
             return cleaned_data
 
-        weekday = date.weekday()  
-        # Monday = 0, Tuesday = 1, ..., Sunday = 6
+        weekday = date.weekday()  # Monday = 0 ... Sunday = 6
 
-        # -------------------------
         # CLOSED ON MONDAYS
-        # -------------------------
         if weekday == 0:
+            raise forms.ValidationError("We are closed on Mondays. Please choose another day.")
+
+        # Opening hour limits depending on day
+        if weekday in [1, 2, 3]:  # Tue–Thu
+            start = datetime.time(16, 0)
+            end = datetime.time(21, 0)
+        elif weekday in [4, 5]:  # Fri–Sat
+            start = datetime.time(16, 0)
+            end = datetime.time(23, 0)
+        elif weekday == 6:  # Sunday
+            start = datetime.time(16, 0)
+            end = datetime.time(21, 0)
+
+        # Check if chosen time is within allowed hours
+        if not (start <= time <= end):
             raise forms.ValidationError(
-                "We are closed on Mondays. Please choose another day."
-            )
-
-        # -------------------------
-        # OPENING HOURS
-        # -------------------------
-        opening_time = datetime.time(16, 0)  # 16:00
-        closing_time = datetime.time(21, 0)  # default closing
-
-        # Friday & Saturday → open until 23:00
-        if weekday in (4, 5):  # Fri=4, Sat=5
-            closing_time = datetime.time(23, 0)
-
-        # Validate time range
-        if not (opening_time <= time <= closing_time):
-            raise forms.ValidationError(
-                f"Our opening hours are {opening_time.strftime('%H:%M')}–{closing_time.strftime('%H:%M')} on this day."
-            )
-
-        # -------------------------
-        # CHECK FOR DOUBLE BOOKINGS
-        # -------------------------
-        if Booking.objects.filter(date=date, time=time).exists():
-            raise forms.ValidationError(
-                "This time slot is already booked. Please choose another."
+                f"Booking time must be between {start.strftime('%H:%M')} and {end.strftime('%H:%M')}."
             )
 
         return cleaned_data
