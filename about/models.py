@@ -1,15 +1,39 @@
+"""
+Models for the NeoEats content management system.
+
+This module defines database models for:
+- AboutPage: Stores content for the About page
+- GalleryImage: Stores images and metadata for the Gallery
+- CollaborationPage: Stores content for the Collaborations page
+"""
+
 from django.db import models
 
-# About Page Model
+
 class AboutPage(models.Model):
+    """
+    Represents the About page content.
+
+    Fields:
+        title (CharField): The heading/title displayed on the About page.
+        content (TextField): The main body text of the About page.
+    """
     title = models.CharField(max_length=200, default='About NeoEats')
     content = models.TextField()
 
     def __str__(self):
         return 'About Page Content'
 
-# Gallery Images Model
+
 class GalleryImage(models.Model):
+    """
+    Represents an image entry in the Gallery.
+
+    Fields:
+        title (CharField): The display name of the image.
+        description (TextField): Optional descriptive text for the image.
+        image (ImageField): The uploaded image file stored in 'gallery/'.
+    """
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=300, blank=True)
     image = models.ImageField(upload_to='gallery/')
@@ -17,8 +41,15 @@ class GalleryImage(models.Model):
     def __str__(self):
         return self.title
 
-# Collaborations Page
+
 class CollaborationPage(models.Model):
+    """
+    Represents the content of the Collaborations page.
+
+    Fields:
+        title (CharField): The heading/title for the page.
+        content (TextField): The main descriptive text about collaborations.
+    """
     title = models.CharField(max_length=200, default='Working With Our Farmers')
     content = models.TextField()
 

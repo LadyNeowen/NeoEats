@@ -1,5 +1,17 @@
+{#
+  Template: gallery.html
+  Description: Renders a gallery of images with titles and descriptions.
+  Context variables:
+    - images: A queryset/list of image objects
+        • img.image.url — URL of the image file  
+        • img.title — Image title  
+        • img.description — Image description
+  Extends: base.html
+#}
+
 {% extends "base.html" %}
 
+{# Sets the HTML page title #}
 {% block title %}Gallery{% endblock %}
 
 {% block content %}
@@ -7,13 +19,22 @@
     <h1>Gallery</h1>
 
     <div class="row">
+
+        {# Loop through all images and display each one in a grid #}
         {% for img in images %}
         <div class="col-md-4 mb-3">
+
+            {# Display the image file #}
             <img src="{{ img.image.url }}" class="img-fluid rounded">
+
+            {# Display the image title #}
             <h5>{{ img.title }}</h5>
+
+            {# Display the image description #}
             <p>{{ img.description }}</p>
         </div>
         {% endfor %}
+
     </div>
 </div>
 {% endblock %}
