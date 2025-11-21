@@ -1,10 +1,24 @@
+{# 
+  Template: about.html
+  Description: Renders the About page using the provided 'about_page' context
+  Extends: base.html
+#}
+
 {% extends "base.html" %}
+
+{# Adds a CSS class to control background for the About page #}
 {% block body_class %}about-bg-right{% endblock %}
+
+{# Sets the HTML <title> for the page #}
 {% block title %}About NeoEats{% endblock %}
 
 {% block content %}
 <div class="container mt-4">
+    
+    {# Displays the title of the About page from the context #}
     <h1>{{ about_page.title }}</h1>
+    
+    {# Displays body text with line breaks converted to <br> or <p> tags #}
     <p>{{ about_page.content|linebreaks }}</p>
 
 </div>
