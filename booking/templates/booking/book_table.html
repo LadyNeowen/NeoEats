@@ -1,5 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Book a Table{% endblock %}
 
 {% block content %}
-<h1>Book a Table</h1>
+<div class="container mt-5 mb-5" style="max-width: 600px;">
+    <h1 class="mb-4 text-center">Book a Table</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary btn-block mt-3">Reserve Table</button>
+    </form>
+</div>
 {% endblock %}
