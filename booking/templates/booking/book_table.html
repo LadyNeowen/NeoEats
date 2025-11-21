@@ -4,20 +4,60 @@
 {% block title %}Book a Table{% endblock %}
 
 {% block content %}
-<div class="container mt-5 mb-5" style="max-width: 600px;">
-    <h1 class="mb-4 text-center">Book a Table</h1>
+<div class="booking-wrapper">
+    <div class="booking-card">
 
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
+        <h1 class="text-center mb-4">Reserve a Table</h1>
+        <p class="booking-sub">We look forward to welcoming you to NeoEats.</p>
 
-    <form method="POST" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success text-center">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
 
-        <button type="submit" class="btn btn-primary btn-block mt-3">Reserve Table</button>
-    </form>
+        <form method="POST" class="booking-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Name</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                {{ form.phone }}
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>Date</label>
+                    {{ form.date }}
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label>Time</label>
+                    {{ form.time }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Guests</label>
+                {{ form.guests }}
+            </div>
+
+            <div class="form-group">
+                <label>Special notes or allergies</label>
+                {{ form.notes }}
+            </div>
+
+            <button type="submit" class="booking-btn">Submit Reservation</button>
+        </form>
+    </div>
 </div>
 {% endblock %}
