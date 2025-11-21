@@ -29,3 +29,17 @@ class Booking(models.Model):
         
     def __str__(self):
         return f"Booking for {self.name} on {self.date} at {self.time}"
+    
+
+class NewsletterSignup(models.Model):
+    """
+    Stores email addresses for newsletter signups.
+    Fields:
+        email (EmailField): The email address of the subscriber.
+        signed_up_at (DateTimeField): Timestamp when the user signed up.
+    """
+    email = models.EmailField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.email

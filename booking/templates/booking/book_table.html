@@ -17,18 +17,19 @@
         {% endif %}
 
         {% if form.errors %}
-            <div class="alert alert-danger">
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                {% endfor %}
-                {% for error in form.non_field_errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-            </div>
+        <div class="alert alert-danger">
+            {% for field in form %}
+            {% for error in field.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+        </div>
         {% endif %}
 
+        <!-- BOOKING FORM -->
         <form method="POST" class="booking-form">
             {% csrf_token %}
 
@@ -69,8 +70,35 @@
                 {{ form.notes }}
             </div>
 
-            <button type="submit" class="booking-btn">Submit Reservation</button>
+            <button type="submit" name="submit_booking" class="booking-btn">
+                Submit Reservation
+            </button>
         </form>
+
+        <hr class="my-4">
+
+        <!-- NEWSLETTER FORM -->
+        <h3 class="text-center mb-3">Join our Newsletter</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ newsletter_form.email }}
+            </div>
+            <button type="submit" name="submit_newsletter" class="btn btn-primary mt-2">
+                Subscribe
+            </button>
+        </form>
+        {% if newsletter_form.errors %}
+        <div class="alert alert-danger mt-3">
+            {% for field in newsletter_form %}
+            {% for error in field.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
     </div>
 </div>
 {% endblock %}

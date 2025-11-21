@@ -1,5 +1,6 @@
 from django import forms
 from .models import Booking
+from .models import NewsletterSignup
 import datetime
 
 class BookingForm(forms.ModelForm):
@@ -50,3 +51,17 @@ class BookingForm(forms.ModelForm):
             )
 
         return cleaned_data
+
+class NewsletterSignupForm(forms.ModelForm):
+    """
+    Form for newsletter signup.
+    """
+    class Meta:
+        model = NewsletterSignup
+        fields = ['email']
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'Enter your email',
+                'class': 'form-control',
+            })
+        }
