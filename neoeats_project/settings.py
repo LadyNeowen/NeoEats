@@ -1,34 +1,32 @@
-'''
+"""
 Django settings for the neoeats_project project.
-
-See:
-https://docs.djangoproject.com/en/4.2/topics/settings/
-https://docs.djangoproject.com/en/4.2/ref/settings/
-'''
+"""
 
 from pathlib import Path
 import os
 import dj_database_url
 
-# Load env variables if present (for local dev)
+# Load env variables if present (local development)
 if os.path.isfile('env.py'):
     import env
 
-
-# Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Security
 SECRET_KEY = 'django-insecure--_r=i*dkld5^_co+hxyh_sctb@@n!&2@8s8p!-m(y0&qg-l6pp'
+
 DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    '.herokuapp.com',
+    'neoeats-62e4965fe040.herokuapp.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'https://neoeats-62e4965fe040.herokuapp.com',
+]
 
 # Installed apps
 INSTALLED_APPS = [
@@ -38,8 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Cloudinary
     'cloudinary_storage',
-    
     'cloudinary',
 
     # Local apps
@@ -49,10 +48,11 @@ INSTALLED_APPS = [
     'booking',
 ]
 
-
 # Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Required on Heroku
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,11 +61,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 ROOT_URLCONF = 'neoeats_project.urls'
 
-
-# Templates configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -82,15 +79,12 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'neoeats_project.wsgi.application'
 
-
-# Database (uses DATABASE_URL from environment)
+# Database
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -100,32 +94,24 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
-# Static + Media
+# Static & Media
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'neoeats@example.com'
+# Whitenoise for production static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Cloudinary configuration
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
-
+# Cloudinary (automatically configured from CLOUDINARY_URL env var)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Default PK field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
