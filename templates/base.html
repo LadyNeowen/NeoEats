@@ -1,53 +1,67 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <link rel='stylesheet'
+        href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css'
+        integrity='sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N'
+        crossorigin='anonymous'>
+
+    <link rel='stylesheet' href='{% static "css/styles.css" %}'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'>
 
     <title>NeoEats - {% block title %}{% endblock %}</title>
 </head>
 
-<body class="{% block body_class %}{% endblock %}">
+<body class='{% block body_class %}{% endblock %}'>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}">NeoEats</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <a class='navbar-brand' href='{% url "home" %}'>NeoEats</a>
+
+        <button class='navbar-toggler' type='button' data-toggle='collapse'
+            data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
+            aria-expanded='false' aria-label='Toggle navigation'>
+            <span class='navbar-toggler-icon'></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             {% with request.resolver_match.url_name as url_name %}
-            <ul class="navbar-nav ml-auto">
+            <ul class='navbar-nav ml-auto'>
 
-                <li class="nav-item {% if url_name == 'home' %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                <li class='nav-item {% if url_name == "home" %}active{% endif %}'>
+                    <a class='nav-link' href='{% url "home" %}'>Home</a>
                 </li>
 
-                <li class="nav-item {% if url_name == 'menu' %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+                <li class='nav-item {% if url_name == "menu" %}active{% endif %}'>
+                    <a class='nav-link' href='{% url "menu" %}'>Menu</a>
                 </li>
 
-                <li class="nav-item {% if url_name == 'book_table' %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'book_table' %}">Book a table</a>
+                <li class='nav-item {% if url_name == "book_table" %}active{% endif %}'>
+                    <a class='nav-link' href='{% url "book_table" %}'>Book a table</a>
                 </li>
 
-                <li
-                    class="nav-item dropdown {% if url_name == 'about' or url_name == 'about_story' or url_name == 'about_gallery' or url_name == 'about_collaborations' %}active{% endif %}">
-                    <a class="nav-link dropdown-toggle" href="{% url 'about' %}" role="button" data-toggle="dropdown"
-                        aria-expanded="false">About us</a>
+                <li class='nav-item dropdown
+                    {% if url_name == "about" or url_name == "about_gallery" or url_name == "about_collaborations" %}
+                        active
+                    {% endif %}'>
 
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'about' %}">About NeoEats</a>
-                        <a class="dropdown-item" href="{% url 'about_gallery' %}">Gallery</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'about_collaborations' %}">Working With Our Farmers</a>
+                    <a class='nav-link dropdown-toggle' href='{% url "about" %}' role='button'
+                        data-toggle='dropdown' aria-expanded='false'>
+                        About us
+                    </a>
+
+                    <div class='dropdown-menu'>
+                        <a class='dropdown-item' href='{% url "about" %}'>About NeoEats</a>
+                        <a class='dropdown-item' href='{% url "about_gallery" %}'>Gallery</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='{% url "about_collaborations" %}'>
+                            Working With Our Farmers
+                        </a>
                     </div>
                 </li>
 
@@ -57,14 +71,14 @@
     </nav>
 
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
-    <div class="footer-bg">
-        <footer class="site-footer">
-            <div class="footer-container">
 
-                <div class="footer-section">
+    <div class='footer-bg'>
+        <footer class='site-footer'>
+            <div class='footer-container'>
+
+                <div class='footer-section'>
                     <h4>Opening Hours</h4>
                     <p>Tue–Thu: 16:00 – 21:00</p>
                     <p>Fri–Sat: 16:00 – 23:00</p>
@@ -72,48 +86,51 @@
                     <p>Closed on Mondays</p>
                 </div>
 
-                <div class="footer-section">
+                <div class='footer-section'>
                     <h4>Contact</h4>
                     <p>Aspsätravägen 9, 12737 Skärholmen</p>
                     <p>Phone: +46 70 123 45 67</p>
                     <p>
                         Email:
-                        <a href="mailto:info@neoeats.com" class="footer-link">
+                        <a href='https://outlook.com' target='_blank'>
                             info@neoeats.com
                         </a>
                     </p>
                 </div>
 
-                <div class="footer-section">
+                <div class='footer-section'>
                     <h4>Follow Us</h4>
-                    <a href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook"></i>
-                        Facebook</a><br>
-                    <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram"></i>
-                        Instagram</a>
-
+                    <a href='https://www.facebook.com' class='social-link'>
+                        <i class='fab fa-facebook'></i> Facebook
+                    </a><br>
+                    <a href='https://www.instagram.com' class='social-link'>
+                        <i class='fab fa-instagram'></i> Instagram
+                    </a>
                 </div>
 
-                <div class="footer-section">
+                <div class='footer-section'>
                     <h4>Find Us Here</h4>
+
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2037.6366036905922!2d17.922727013318916!3d59.288924574488725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f768560cabf9b%3A0xbd80becc4627b8a!2zQXNwc8OkdHJhdsOkZ2VuIDksIDEyNyAzNyBTa8OkcmhvbG1lbg!5e0!3m2!1ssv!2sse!4v1763661749539!5m2!1ssv!2sse"
-                        width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2037.6366036905922!2d17.922727013318916!3d59.288924574488725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f768560cabf9b%3A0xbd80becc4627b8a!2zQXNwc8OkdHJhdsOkZ2VuIDksIDEyNyAzNyBTa8OkcmhvbG1lbg!5e0!3m2!1ssv!2sse!4v1763661749539!5m2!1ssv!2sse'
+                        width='100%' height='120' style='border:0;' allowfullscreen='' loading='lazy'
+                        referrerpolicy='no-referrer-when-downgrade'>
                     </iframe>
                 </div>
 
             </div>
 
-            <p class="footer-bottom">&copy; 2025 NeoEats. All rights reserved.</p>
+            <p class='footer-bottom'>&copy; 2025 NeoEats. All rights reserved.</p>
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
-</body>
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js'
+        integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj'
+        crossorigin='anonymous'></script>
 
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct'
+        crossorigin='anonymous'></script>
+
+</body>
 </html>

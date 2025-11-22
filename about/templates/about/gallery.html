@@ -4,17 +4,17 @@
 {% block title %}Gallery{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class='container mt-4'>
     <h1>Gallery</h1>
 
     <div class="row">
 
         {# Loop through all images and display each one in a grid #}
         {% for img in images %}
-        <div class="col-md-4 mb-3">
+        <div class='col-md-4 mb-3'>
 
             {# Display the image file #}
-            <img src="{{ img.image.url }}" class="img-fluid rounded">
+            <img src='{{ img.image.url }}' class='img-fluid rounded'>
 
             {# Display the image title #}
             <h5>{{ img.title }}</h5>

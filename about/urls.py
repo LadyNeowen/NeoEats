@@ -1,11 +1,11 @@
-"""
+'''
 URL configuration for the About app.
 
-This module defines URL patterns for:
+Defines URL patterns for:
 - About page
 - Gallery page
-- Collaborations with farmers page
-"""
+- Collaborations with Farmers page
+'''
 
 from django.urls import path
 from . import views
