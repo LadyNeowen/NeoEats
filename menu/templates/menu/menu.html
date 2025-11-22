@@ -1,62 +1,66 @@
-{% extends "base.html" %}
+{# 
+  Template: menu/menu.html
+  Description: Displays the restaurant menu grouped by category.
+#}
+
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Menu{% endblock %}
 
 {% block content %}
-<div class="container menu-page">
+<div class='container menu-page'>
 
-    <h1 class="text-center mb-5">Our Menu</h1>
+    <h1 class='text-center mb-5'>Our Menu</h1>
 
-    <!-- Starters -->
-    <h3 class="menu-category">Starters</h3>
+    {# Starters #}
+    <h3 class='menu-category'>Starters</h3>
     {% for item in starters %}
-        <div class="menu-item">
+        <div class='menu-item'>
             <h5>
                 {{ item.name }}
-                <span class="price">{{ item.price }} kr</span>
+                <span class='price'>{{ item.price }} kr</span>
             </h5>
-            <p class="description">{{ item.description }}</p>
+            <p class='description'>{{ item.description }}</p>
         </div>
     {% empty %}
-        <p class="description">No starters available.</p>
+        <p class='description'>No starters available.</p>
     {% endfor %}
 
-    <hr class="menu-divider">
+    <hr class='menu-divider'>
 
-    <!-- Mains -->
-    <h3 class="menu-category">Main Courses</h3>
+    {# Mains #}
+    <h3 class='menu-category'>Main Courses</h3>
     {% for item in mains %}
-        <div class="menu-item">
+        <div class='menu-item'>
             <h5>
                 {{ item.name }}
-                <span class="price">{{ item.price }} kr</span>
+                <span class='price'>{{ item.price }} kr</span>
             </h5>
-            <p class="description">{{ item.description }}</p>
+            <p class='description'>{{ item.description }}</p>
         </div>
     {% empty %}
-        <p class="description">No mains available.</p>
+        <p class='description'>No mains available.</p>
     {% endfor %}
 
-    <hr class="menu-divider">
+    <hr class='menu-divider'>
 
-    <!-- Desserts -->
-    <h3 class="menu-category">Desserts</h3>
+    {# Desserts #}
+    <h3 class='menu-category'>Desserts</h3>
     {% for item in desserts %}
-        <div class="menu-item">
+        <div class='menu-item'>
             <h5>
                 {{ item.name }}
-                <span class="price">{{ item.price }} kr</span>
+                <span class='price'>{{ item.price }} kr</span>
             </h5>
-            <p class="description">{{ item.description }}</p>
+            <p class='description'>{{ item.description }}</p>
         </div>
     {% empty %}
-        <p class="description">No desserts available.</p>
+        <p class='description'>No desserts available.</p>
     {% endfor %}
 
-    <!-- Menu Footer Notes -->
-    <div class="menu-notes-box">
-        <p class="menu-notes">
+    <div class='menu-notes-box'>
+        <p class='menu-notes'>
             All dishes are lactose free. For vegan options, please notify the kitchen.
         </p>
     </div>

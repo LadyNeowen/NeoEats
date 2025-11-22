@@ -1,9 +1,18 @@
+'''
+Forms for the Booking app.
+
+Includes:
+- BookingForm: Creates and validates table reservations.
+- NewsletterSignupForm: Collects newsletter subscription emails.
+'''
+
 from django import forms
-from .models import Booking
-from .models import NewsletterSignup
+from .models import Booking, NewsletterSignup
 import datetime
 
+
 class BookingForm(forms.ModelForm):
+    '''Form used to submit a table booking.'''
 
     class Meta:
         model = Booking
@@ -19,43 +28,43 @@ class BookingForm(forms.ModelForm):
         }
 
     def clean(self):
+        '''Validate opening hours and closed days.'''
         cleaned_data = super().clean()
 
-        date = cleaned_data.get("date")
-        time = cleaned_data.get("time")
+        date = cleaned_data.get('date')
+        time = cleaned_data.get('time')
 
         if not date or not time:
             return cleaned_data
 
-        weekday = date.weekday()  # Monday = 0 ... Sunday = 6
+        weekday = date.weekday()  # Monday = 0
 
-        # CLOSED ON MONDAYS
+        # Closed on Mondays
         if weekday == 0:
-            raise forms.ValidationError("We are closed on Mondays. Please choose another day.")
+            raise forms.ValidationError('We are closed on Mondays. Please choose another day.')
 
-        # Opening hour limits depending on day
+        # Opening hours by day
         if weekday in [1, 2, 3]:  # Tue–Thu
             start = datetime.time(16, 0)
             end = datetime.time(21, 0)
         elif weekday in [4, 5]:  # Fri–Sat
             start = datetime.time(16, 0)
             end = datetime.time(23, 0)
-        elif weekday == 6:  # Sunday
+        else:  # Sunday
             start = datetime.time(16, 0)
             end = datetime.time(21, 0)
 
-        # Check if chosen time is within allowed hours
         if not (start <= time <= end):
             raise forms.ValidationError(
-                f"Booking time must be between {start.strftime('%H:%M')} and {end.strftime('%H:%M')}."
+                f'Booking time must be between {start.strftime("%H:%M")} and {end.strftime("%H:%M")}.'
             )
 
         return cleaned_data
 
+
 class NewsletterSignupForm(forms.ModelForm):
-    """
-    Form for newsletter signup.
-    """
+    '''Form for newsletter signup.'''
+
     class Meta:
         model = NewsletterSignup
         fields = ['email']

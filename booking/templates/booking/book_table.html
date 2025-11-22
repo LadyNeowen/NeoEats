@@ -1,23 +1,34 @@
-{% extends "base.html" %}
+{# 
+  Template: booking/book_table.html
+  Description: Renders the booking form and newsletter signup form.
+  Includes:
+    - Booking form submission
+    - Newsletter signup
+    - Error + success message display
+#}
+
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Book a Table{% endblock %}
 
 {% block content %}
-<div class="booking-wrapper">
-    <div class="booking-card">
+<div class='booking-wrapper'>
+    <div class='booking-card'>
 
-        <h1 class="text-center mb-4">Reserve a Table</h1>
-        <p class="booking-sub">We look forward to welcoming you to NeoEats.</p>
+        <h1 class='text-center mb-4'>Reserve a Table</h1>
+        <p class='booking-sub'>We look forward to welcoming you to NeoEats.</p>
 
+        {# Success messages #}
         {% if messages %}
         {% for message in messages %}
-        <div class="alert alert-success text-center">{{ message }}</div>
+        <div class='alert alert-success text-center'>{{ message }}</div>
         {% endfor %}
         {% endif %}
 
+        {# Booking form errors #}
         {% if form.errors %}
-        <div class="alert alert-danger">
+        <div class='alert alert-danger'>
             {% for field in form %}
             {% for error in field.errors %}
             <p>{{ error }}</p>
@@ -30,67 +41,69 @@
         {% endif %}
 
         <!-- BOOKING FORM -->
-        <form method="POST" class="booking-form">
+        <form method='POST' class='booking-form'>
             {% csrf_token %}
 
-            <div class="form-group">
+            <div class='form-group'>
                 <label>Name</label>
                 {{ form.name }}
             </div>
 
-            <div class="form-group">
+            <div class='form-group'>
                 <label>Email</label>
                 {{ form.email }}
             </div>
 
-            <div class="form-group">
+            <div class='form-group'>
                 <label>Phone</label>
                 {{ form.phone }}
             </div>
 
-            <div class="row">
-                <div class="col-md-6 form-group">
+            <div class='row'>
+                <div class='col-md-6 form-group'>
                     <label>Date</label>
                     {{ form.date }}
                 </div>
 
-                <div class="col-md-6 form-group">
+                <div class='col-md-6 form-group'>
                     <label>Time</label>
                     {{ form.time }}
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class='form-group'>
                 <label>Guests</label>
                 {{ form.guests }}
             </div>
 
-            <div class="form-group">
+            <div class='form-group'>
                 <label>Special notes or allergies</label>
                 {{ form.notes }}
             </div>
 
-            <button type="submit" name="submit_booking" class="booking-btn">
+            <button type='submit' name='submit_booking' class='booking-btn'>
                 Submit Reservation
             </button>
         </form>
 
-        <hr class="my-4">
+        <hr class='my-4'>
 
         <!-- NEWSLETTER FORM -->
-        <h3 class="text-center mb-3">Join our Newsletter</h3>
+        <h3 class='text-center mb-3'>Join our Newsletter</h3>
 
-        <form method="POST">
+        <form method='POST'>
             {% csrf_token %}
-            <div class="form-group">
+            <div class='form-group'>
                 {{ newsletter_form.email }}
             </div>
-            <button type="submit" name="submit_newsletter" class="btn btn-primary mt-2">
+            <button type='submit' name='submit_newsletter' class='btn btn-primary mt-2'>
                 Subscribe
             </button>
         </form>
+
+        {# Newsletter form errors #}
         {% if newsletter_form.errors %}
-        <div class="alert alert-danger mt-3">
+        <div class='alert alert-danger mt-3'>
             {% for field in newsletter_form %}
             {% for error in field.errors %}
             <p>{{ error }}</p>
