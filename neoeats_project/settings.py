@@ -21,11 +21,13 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     'neoeats.herokuapp.com',
+    'neoeats-62e4965fe040.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'https://neoeats.herokuapp.com',
+    'https://neoeats-62e4965fe040.herokuapp.com',
 ]
 
 # Installed apps
