@@ -15,17 +15,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = 'django-insecure--_r=i*dkld5^_co+hxyh_sctb@@n!&2@8s8p!-m(y0&qg-l6pp'
 
-DEBUG = False
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'neoeats-62e4965fe040.herokuapp.com',
+    'neoeats.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
-    'https://neoeats-62e4965fe040.herokuapp.com',
+    'https://neoeats.herokuapp.com',
 ]
 
 # Installed apps
@@ -103,9 +103,11 @@ USE_TZ = True
 # Static & Media
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Whitenoise for production static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
