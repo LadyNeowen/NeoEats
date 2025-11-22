@@ -174,8 +174,9 @@ main {
 /* ------------------------- */
 
 .menu-page {
-    padding: 60px 0 5px;
+    padding: 60px 20px 5px;
     background-color: #222;
+    font-style: italic;
 }
 
 .menu-page h1 {
@@ -434,3 +435,4 @@ main {
     .booking-card { padding: 15px; }
     .collab-container { padding: 15px; }
 }
+

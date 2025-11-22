@@ -6,14 +6,11 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
-    <link rel='stylesheet'
-        href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css'
-        integrity='sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N'
-        crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css'
+        integrity='sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N' crossorigin='anonymous'>
 
     <link rel='stylesheet' href='{% static "css/styles.css" %}'>
-    <link rel='stylesheet'
-        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'>
 
     <title>NeoEats - {% block title %}{% endblock %}</title>
 </head>
@@ -23,9 +20,8 @@
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <a class='navbar-brand' href='{% url "home" %}'>NeoEats</a>
 
-        <button class='navbar-toggler' type='button' data-toggle='collapse'
-            data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
-            aria-expanded='false' aria-label='Toggle navigation'>
+        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'
+            aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
             <span class='navbar-toggler-icon'></span>
         </button>
 
@@ -50,8 +46,8 @@
                         active
                     {% endif %}'>
 
-                    <a class='nav-link dropdown-toggle' href='{% url "about" %}' role='button'
-                        data-toggle='dropdown' aria-expanded='false'>
+                    <a class='nav-link dropdown-toggle' href='{% url "about" %}' role='button' data-toggle='dropdown'
+                        aria-expanded='false'>
                         About us
                     </a>
 
@@ -120,7 +116,7 @@
 
             </div>
 
-            <p class='footer-bottom'>&copy; 2025 NeoEats. All rights reserved.</p>
+            <p class='footer-bottom'>&copy; <span id='year'></span> NeoEats. All rights reserved.</p>
         </footer>
     </div>
 
@@ -131,6 +127,8 @@
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js'
         integrity='sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct'
         crossorigin='anonymous'></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 </body>
+
 </html>
