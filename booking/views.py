@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.db import IntegrityError
+from django.conf import settings   # <-- IMPORTANT
 
 from .forms import BookingForm, NewsletterSignupForm
 from .models import Booking
@@ -22,10 +23,13 @@ def book_table(request):
                 try:
                     booking = booking_form.save()
 
-                    # Send confirmation email
-                    send_mail(
-                        subject='Your NeoEats Booking Confirmation',
-                        message=f'''
+                    # ---------------------------
+                    #   EMAIL ONLY IN DEBUG MODE
+                    # ---------------------------
+                    if settings.DEBUG:
+                        send_mail(
+                            subject='Your NeoEats Booking Confirmation',
+                            message=f'''
 Thank you for booking a table at NeoEats!
 
 Here are your booking details:
@@ -36,12 +40,12 @@ Guests: {booking.guests}
 
 We look forward to seeing you!
 ''',
-                        from_email='neoeats@example.com',
-                        recipient_list=[booking.email],
-                        fail_silently=False,
-                    )
+                            from_email='neoeats@example.com',
+                            recipient_list=[booking.email],
+                            fail_silently=False,
+                        )
 
-                    messages.success(request, 'Your table has been booked! Check your email for confirmation.')
+                    messages.success(request, 'Your table has been booked!')
                     return redirect('book_table')
 
                 except IntegrityError:
