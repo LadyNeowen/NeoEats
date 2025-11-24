@@ -118,7 +118,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Allow iframe embedding (needed for responsiveness tools like amiresponsive)
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 # Default PK field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
