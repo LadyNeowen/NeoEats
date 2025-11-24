@@ -117,5 +117,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Cloudinary (automatically configured from CLOUDINARY_URL env var)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+# Allow iframe embedding (needed for responsiveness tools like amiresponsive)
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 # Default PK field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
