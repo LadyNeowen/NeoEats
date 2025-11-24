@@ -13,7 +13,7 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security
-SECRET_KEY = 'django-insecure--_r=i*dkld5^_co+hxyh_sctb@@n!&2@8s8p!-m(y0&qg-l6pp'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
