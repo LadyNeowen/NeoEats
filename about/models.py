@@ -33,7 +33,7 @@ class GalleryImage(models.Model):
     Fields:
         title (CharField): The display name of the image.
         description (TextField): Optional descriptive text for the image.
-        image (ImageField): The uploaded image file stored in 'gallery/'.
+        image (CloudinaryField): The uploaded image file.
     """
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=300, blank=True)
@@ -51,7 +51,10 @@ class CollaborationPage(models.Model):
         title (CharField): The heading/title for the page.
         content (TextField): The main descriptive text about collaborations.
     """
-    title = models.CharField(max_length=200, default='Working With Our Farmers')
+    title = models.CharField(
+        max_length=200,
+        default='Working With Our Farmers'
+    )
     content = models.TextField()
 
     def __str__(self):
