@@ -152,7 +152,7 @@ None currently known.
 
 # Validator Testing
 
-Python code validated using flake8 and PEP8 tools
+Python code validated using PEP8 tools
 
 HTML validated through W3C validator
 
@@ -193,7 +193,7 @@ Heroku for deployment
 
 Django documentation for model/template references
 
-Bootstrap for styling layout inspiration
+Bootstrap for styling layout
 
 My mentor for guidance
 
@@ -202,3 +202,15 @@ ChatGPT for debugging and explanations along the way
 ChatGPT for docstring documentation
 
 ami.responsive for device preview screenshot
+
+# Inspiration:
+LMA Content
+https://restaurant--booking-465b6b7fd829.herokuapp.com/
+https://github.com/DiarmuidHenry/Restaurant-Booking
+
+https://www.freecodecamp.org/news/how-to-create-models-in-your-django-project/?utm_source=chatgpt.com
+https://docs.djangoproject.com/en/5.2/topics/db/models/?utm_source=chatgpt.com
+https://www.digitalocean.com/community/tutorials/how-to-create-django-models?utm_source=chatgpt.com
+
+
+
