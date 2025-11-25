@@ -8,6 +8,8 @@ from pathlib import Path
 
 import dj_database_url
 
+
+
 # Load environment variables (local development)
 if os.path.isfile("env.py"):
     import env  # noqa: F401
@@ -135,6 +137,11 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = (
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 )
+
+if 'test' in sys.argv:
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+    
+    
 WHITENOISE_USE_FINDERS = True
 
 MEDIA_URL = "/media/"
