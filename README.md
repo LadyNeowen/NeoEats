@@ -102,9 +102,9 @@ User login system for customers
 
 # Testing
 
-All templates tested across Chrome, Edge, Safari, and mobile devices
+## All templates tested across Chrome, Edge, Safari, and mobile devices
 
-Manual testing of:
+## Manual testing of:
 
 Image uploads
 
@@ -119,6 +119,64 @@ Django server tested locally with DEBUG on and off
 Verified static & media file behavior in production
 
 Cloudinary URL reliability confirmed
+
+## Automated testing 
+Was implemented across multiple apps using Django’s built-in TestCase.
+
+All tests are stored inside each app’s tests/ directory following Django’s recommended structure.
+
+Each app contains a dedicated test suite:
+
+app/tests/
+* test_models.py
+* test_views.py
+* test_urls.py
+* test_templates.py
+* test_forms.py        (Booking app only)
+* test_admin.py
+* test_apps.py
+* __init__.py
+
+## What Was Tested:
+
+### Core App
+
+* View renders correct template.
+* URL resolves to correct view.
+* Template contains expected hero banner text.
+* App configuration loads correctly.
+
+### Menu App
+
+* MenuItem model: string method & category choices.
+* Menu view: context groups dishes by category.
+* URL resolution.
+* Admin registration.
+* Template displays menu items correctly.
+* AppConfig.
+
+### About App
+
+* Models (AboutPage, GalleryImage, CollaborationPage).
+* Views: about, gallery, collaboration pages.
+* URL patterns.
+* Templates: content rendered correctly.
+* Admin registration.
+
+### Booking App
+
+* Models: booking + newsletter.
+* Forms: validation and custom clean logic.
+* Views: booking logic, newsletter logic.
+* URLs.
+* Templates: form fields and errors.
+* Admin registration.
+
+### Running the Tests
+
+python manage.py test appname.tests
+
+
 
 <br>
 
@@ -204,13 +262,18 @@ ChatGPT for docstring documentation
 ami.responsive for device preview screenshot
 
 # Inspiration:
-LMA Content
-https://restaurant--booking-465b6b7fd829.herokuapp.com/
-https://github.com/DiarmuidHenry/Restaurant-Booking
+* LMA Content
+* https://restaurant--booking-465b6b7fd829.herokuapp.com/
+* https://github.com/DiarmuidHenry/Restaurant-Booking
 
-https://www.freecodecamp.org/news/how-to-create-models-in-your-django-project/?utm_source=chatgpt.com
-https://docs.djangoproject.com/en/5.2/topics/db/models/?utm_source=chatgpt.com
-https://www.digitalocean.com/community/tutorials/how-to-create-django-models?utm_source=chatgpt.com
+## Models
+* https://www.freecodecamp.org/news/how-to-create-models-in-your-django-project/?utm_source=chatgpt.com
+* https://docs.djangoproject.com/en/5.2/topics/db/models/?utm_source=chatgpt.com
+* https://www.digitalocean.com/community/tutorials/how-to-create-django-models?utm_source=chatgpt.com
+
+## Testing
+* https://docs.djangoproject.com/en/5.2/topics/testing/overview/?utm_source=chatgpt.com
+* https://realpython.com/pytest-python-testing/ (And many other areas, I signed up with them to get lessons. )
 
 
 
