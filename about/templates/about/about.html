@@ -13,7 +13,7 @@
     <h1>{{ about_page.title }}</h1>
     
     {# Displays body text with line breaks converted to <br> or <p> tags #}
-    <p>{{ about_page.content|linebreaks }}</p>
+    {{ about_page.content|linebreaks }}
 
 </div>
 {% endblock %}

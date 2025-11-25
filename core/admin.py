@@ -4,4 +4,3 @@ Admin configuration for the Core app.
 '''
 
 from django.contrib import admin
-

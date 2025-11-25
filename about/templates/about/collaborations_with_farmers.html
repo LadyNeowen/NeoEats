@@ -12,9 +12,10 @@
 
         {# Displays the page title from the context #}
         <h1>{{ collaboration_page.title }}</h1>
+        <br>
 
         {# Renders main content with preserved line breaks converted to HTML #}
-        <p>{{ collaboration_page.content|linebreaks }}</p>
+        {{ collaboration_page.content|linebreaks }}
 
     </div>
 </div>

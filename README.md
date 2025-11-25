@@ -11,24 +11,35 @@ The site is designed to work seamlessly on desktop, tablet, and mobile devices.
 <br>
 
 # How the Site Looks on Different Devices
-*****
+![Responsiveness](./README_images/Responsiveness.jpg)
+
 
 # How It Works
 ## NeoEats is a content-managed restaurant website consisting of:
 
-About Page
+### About Page 
+![About NeoEats](./README_images/About.jpg) 
+![Working With Our Farmers](./README_images/Farmers.jpg)
+
+### Gallery 
+![Gallery](./README_images/Gallery.jpg)
+
+### Menu Page 
+![Responsive Menu](./README_images/Responsive_menu.jpg)
+
+### Booking Page 
+![Book a Table](./README_images/Book_table.jpg)
+
+
+
 
 Editable title + text.
 
-Menu Page
-
 Dynamically generated from Django models—add dishes in the admin panel.
 
-Gallery
+Editable title + text.
 
 Uses Cloudinary to store and serve gallery images with fast CDN delivery.
-
-Booking Page
 
 A simple reservation form styled to match the site’s aesthetic.
 
