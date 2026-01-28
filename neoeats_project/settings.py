@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "accounts",
 
     # Cloudinary
     "cloudinary_storage",
@@ -88,7 +89,9 @@ WSGI_APPLICATION = "neoeats_project.wsgi.application"
 
 # Database
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
 }
 
 # Use SQLite during tests
