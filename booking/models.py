@@ -7,10 +7,19 @@ Includes:
 '''
 
 from django.db import models
+from django.conf import settings
 
 
 class Booking(models.Model):
     '''Represents a table reservation at NeoEats.'''
+    
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='bookings',
+        null=True,
+        blank=True,
+    )
 
     STATUS_CHOICES = [
         ('pending', 'Pending'),
