@@ -264,6 +264,9 @@ ami.responsive for device preview screenshot
 * https://restaurant--booking-465b6b7fd829.herokuapp.com/
 * https://github.com/DiarmuidHenry/Restaurant-Booking
 * https://www.youtube.com/watch?v=DIFaOkxy6TE (User Registration and login)
+* https://docs.djangoproject.com/en/6.0/topics/auth/customizing/#referencing-the-user-model-in-other-models (Customizing authentication)
+* https://docs.djangoproject.com/en/6.0/topics/forms/ (Formatting of several forms in the same view)
+* https://docs.djangoproject.com/en/6.0/topics/http/shortcuts/#get-object-or-404 (Ensure that users only edit their own posts )
 
 ## Models
 * https://www.freecodecamp.org/news/how-to-create-models-in-your-django-project/?utm_source=chatgpt.com

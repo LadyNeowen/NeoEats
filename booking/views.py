@@ -1,15 +1,19 @@
-from django.shortcuts import render, redirect
+
+from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.db import IntegrityError
-from django.conf import settings
+from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import BookingForm, NewsletterSignupForm
+from .models import Booking
 
-
+@login_required
 def book_table(request):
     '''
     Display and process the booking form and newsletter signup form.
+    Bookings are stored against the logged in user.
     '''
     if request.method == 'POST':
 
@@ -20,29 +24,30 @@ def book_table(request):
 
             if booking_form.is_valid():
                 try:
-                    booking = booking_form.save()
-
-                    # Email only in debug mode
+                    booking = booking_form.save(commit=False)
+                    booking.user = request.user
+                    booking.save()
+                    
                     if settings.DEBUG:
                         send_mail(
-                            subject='Your NeoEats Booking Confirmation',
+                            subject="Your NeoEats Booking Confirmation",
                             message=(
-                                'Thank you for booking a table at NeoEats!\n\n'
-                                'Here are your booking details:\n'
-                                f'Name: {booking.name}\n'
-                                f'Date: {booking.date}\n'
-                                f'Time: {booking.time}\n'
-                                f'Guests: {booking.guests}\n\n'
-                                'We look forward to seeing you!'
+                                "Thank you for booking a table at NeoEats!\n\n"
+                                "Here are your booking details:\n"
+                                f"Name: {booking.name}\n"
+                                f"Date: {booking.date}\n"
+                                f"Time: {booking.time}\n"
+                                f"Guests: {booking.guests}\n\n"
+                                "We look forward to seeing you!"
                             ),
-                            from_email='neoeats@example.com',
+                            from_email="neoeats@example.com",
                             recipient_list=[booking.email],
                             fail_silently=False,
                         )
-
+                    
                     messages.success(request, 'Your table has been booked!')
-                    return redirect('book_table')
-
+                    return redirect('my_bookings')
+                
                 except IntegrityError:
                     messages.error(
                         request,
