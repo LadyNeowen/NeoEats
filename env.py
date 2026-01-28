@@ -7,7 +7,7 @@ Sets required environment variables for development.
 import os
 
 # Enable Django debug mode locally (Heroku ignores this file)
-os.environ.setdefault('DEBUG', 'True')
+os.environ.setdefault('DEBUG', 'False') == 'True'
 
 # Local Secret Key (ONLY used for local development)
 os.environ.setdefault(

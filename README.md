@@ -96,8 +96,6 @@ Customer reviews page
 
 Add alt-text fields to gallery images
 
-User login system for customers
-
 <br>
 
 # Testing
@@ -265,6 +263,7 @@ ami.responsive for device preview screenshot
 * LMA Content
 * https://restaurant--booking-465b6b7fd829.herokuapp.com/
 * https://github.com/DiarmuidHenry/Restaurant-Booking
+* https://www.youtube.com/watch?v=DIFaOkxy6TE (User Registration and login)
 
 ## Models
 * https://www.freecodecamp.org/news/how-to-create-models-in-your-django-project/?utm_source=chatgpt.com
