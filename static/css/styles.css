@@ -2,7 +2,8 @@
 /* Global Layout Fixes       */
 /* ------------------------- */
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -79,11 +80,11 @@ main {
     color: #f0c040 !important;
 }
 
-.navbar-nav .active > .nav-link {
+.navbar-nav .active>.nav-link {
     color: #f0c040 !important;
 }
 
-.navbar-nav > .nav-item > .nav-link {
+.navbar-nav>.nav-item>.nav-link {
     font-weight: bold;
     font-size: 1.3rem;
     margin: 5px;
@@ -135,7 +136,7 @@ main {
     width: 100%;
 }
 
-.footer-section h4 {
+.footer-section h2 {
     color: #f0c040;
     font-weight: bold;
     margin-bottom: 10px;
@@ -212,11 +213,15 @@ main {
     margin-bottom: 20px;
 }
 
-.menu-item h5 {
+/* Changed from h5 -> h2, keep same appearance */
+.menu-item h2 {
     display: flex;
     justify-content: space-between;
     font-size: 1.2rem;
     color: #fff;
+    margin: 0;
+    /* IMPORTANT: remove default h2 spacing */
+    padding: 0;
 }
 
 .menu-item .price {
@@ -247,8 +252,8 @@ main {
 /* ------------------------- */
 
 .about-bg-right {
-    background: linear-gradient(to left, rgba(0,0,0,0.5), transparent 40%),
-                url('../images/sean-stratton-ObpCE_X3j6U-unsplash.jpg') right center / cover no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 40%),
+        url('../images/sean-stratton-ObpCE_X3j6U-unsplash.jpg') right center / cover no-repeat;
     background-attachment: fixed;
 }
 
@@ -300,7 +305,7 @@ main {
     border-radius: 16px;
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
 .booking-card h1 {
@@ -359,7 +364,7 @@ main {
     background: rgba(255, 255, 255, 0.95);
     padding: 35px;
     border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .my-bookings-image {
@@ -413,7 +418,7 @@ main {
     border-radius: 16px;
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .signup-card h1 {
@@ -459,7 +464,8 @@ main {
     position: relative;
     background: url('../images/login.jpg') center/cover no-repeat;
 
-    min-height: calc(100vh - 80px); /* full screen minus navbar */
+    min-height: calc(100vh - 80px);
+    /* full screen minus navbar */
     width: 100%;
 
     display: flex;
@@ -490,7 +496,7 @@ main {
     border-radius: 16px;
     max-width: 550px;
     margin: 0 auto;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     text-align: center;
 }
 
@@ -511,12 +517,29 @@ main {
 
 /* ≤ 1024px */
 @media (max-width: 1024px) {
-    .hero-text h1 { font-size: 2.5rem; }
-    .hero-text p { font-size: 1.2rem; }
-    .navbar-brand { font-size: 2rem; }
-    .menu-page h1 { font-size: 2.2rem; }
-    .menu-item h5 { font-size: 1.1rem; }
-    .booking-card { max-width: 500px; }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .menu-page h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu-item h2 {
+        font-size: 1.1rem;
+    }
+
+    .booking-card {
+        max-width: 500px;
+    }
 }
 
 /* ≤ 768px */
@@ -532,15 +555,22 @@ main {
         left: 5%;
     }
 
-    .hero-text h1 { font-size: 2rem; }
-    .hero-text p { font-size: 1.1rem; }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
 
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
 
-    .footer-section { min-width: 100%; }
+    .footer-section {
+        min-width: 100%;
+    }
 
     .about-bg-right {
         background-position: center;
@@ -548,7 +578,7 @@ main {
     }
 
     .about-bg-right .container {
-        background: rgba(0,0,0,0.55);
+        background: rgba(0, 0, 0, 0.55);
     }
 
     .collab-container {
@@ -570,26 +600,43 @@ main {
         background-position: center;
     }
 
-    .hero-text h1 { font-size: 1.8rem; }
-    .hero-text p { font-size: 1rem; }
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
 
     .navbar-brand {
         font-size: 1.6rem;
         margin-left: 0;
     }
 
-    .navbar-nav .nav-link { font-size: 1.1rem; }
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+    }
 
-    .menu-page h1 { font-size: 1.8rem; }
-    .menu-category { font-size: 1.2rem; }
-    .menu-item h5 { font-size: 1rem; }
+    .menu-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu-category {
+        font-size: 1.2rem;
+    }
+
+    .menu-item h2 {
+        font-size: 1rem;
+    }
 
     .about-bg-right .container {
         padding: 20px;
         border-radius: 6px;
     }
 
-    .collab-container { padding: 20px; }
+    .collab-container {
+        padding: 20px;
+    }
 
     .booking-card {
         padding: 20px;
@@ -604,10 +651,23 @@ main {
 
 /* ≤ 375px */
 @media (max-width: 375px) {
-    .hero-text h1 { font-size: 1.5rem; }
-    .hero-text p { font-size: 0.9rem; }
-    .navbar-brand { font-size: 1.4rem; }
-    .booking-card { padding: 15px; }
-    .collab-container { padding: 15px; }
-}
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
 
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .booking-card {
+        padding: 15px;
+    }
+
+    .collab-container {
+        padding: 15px;
+    }
+}

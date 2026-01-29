@@ -193,6 +193,9 @@ No major validation errors detected.
 
 ## Deployment
 
+* Database migrations run automatically via Procfile release phase.
+* Prevents missing table errors on Heroku.
+
 ### Heroku Deployment Steps
 
 1. Create a new Heroku app

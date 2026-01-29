@@ -9,49 +9,49 @@
     <h1 class='text-center mb-5'>Our Menu</h1>
 
     {# Starters #}
-    <h3 class='menu-category'>Starters</h3>
+    <h2 class='menu-category'>Starters</h2>
     {% for item in starters %}
-        <div class='menu-item'>
-            <h5>
-                {{ item.name }}
-                <span class='price'>{{ item.price }} kr</span>
-            </h5>
-            <p class='description'>{{ item.description }}</p>
-        </div>
+    <div class='menu-item'>
+        <h2>
+            {{ item.name }}
+            <span class='price'>{{ item.price }} kr</span>
+        </h2>
+        <p class='description'>{{ item.description }}</p>
+    </div>
     {% empty %}
-        <p class='description'>No starters available.</p>
+    <p class='description'>No starters available.</p>
     {% endfor %}
 
     <hr class='menu-divider'>
 
     {# Mains #}
-    <h3 class='menu-category'>Main Courses</h3>
+    <h2 class='menu-category'>Main Courses</h2>
     {% for item in mains %}
-        <div class='menu-item'>
-            <h5>
-                {{ item.name }}
-                <span class='price'>{{ item.price }} kr</span>
-            </h5>
-            <p class='description'>{{ item.description }}</p>
-        </div>
+    <div class='menu-item'>
+        <h2>
+            {{ item.name }}
+            <span class='price'>{{ item.price }} kr</span>
+        </h2>
+        <p class='description'>{{ item.description }}</p>
+    </div>
     {% empty %}
-        <p class='description'>No mains available.</p>
+    <p class='description'>No mains available.</p>
     {% endfor %}
 
     <hr class='menu-divider'>
 
     {# Desserts #}
-    <h3 class='menu-category'>Desserts</h3>
+    <h2 class='menu-category'>Desserts</h2>
     {% for item in desserts %}
-        <div class='menu-item'>
-            <h5>
-                {{ item.name }}
-                <span class='price'>{{ item.price }} kr</span>
-            </h5>
-            <p class='description'>{{ item.description }}</p>
-        </div>
+    <div class='menu-item'>
+        <h2>
+            {{ item.name }}
+            <span class='price'>{{ item.price }} kr</span>
+        </h2>
+        <p class='description'>{{ item.description }}</p>
+    </div>
     {% empty %}
-        <p class='description'>No desserts available.</p>
+    <p class='description'>No desserts available.</p>
     {% endfor %}
 
     <div class='menu-notes-box'>
