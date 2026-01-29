@@ -85,7 +85,9 @@ def book_table(request):
                     messages.success(request, "You've been added to our newsletter!")
                     return redirect("book_table")
                 except IntegrityError:
-                    messages.error(request, "You're already subscribed to our newsletter!")
+                    messages.error(
+                        request, "You're already subscribed to our newsletter!"
+                    )
 
     return render(
         request,
@@ -137,7 +139,9 @@ def edit_booking(request, booking_id):
     else:
         form = BookingForm(instance=booking)
 
-    return render(request, "booking/edit_booking.html", {"form": form, "booking": booking})
+    return render(
+        request, "booking/edit_booking.html", {"form": form, "booking": booking}
+    )
 
 
 @login_required

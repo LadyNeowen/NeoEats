@@ -1,13 +1,13 @@
-'''
+"""
 Views for the Menu app.
-'''
+"""
 
 from django.shortcuts import render
 from .models import MenuItem
 
 
 def menu(request):
-    '''
+    """
     Render the menu page.
 
     Retrieves:
@@ -22,17 +22,17 @@ def menu(request):
         starters (QuerySet[MenuItem])
         mains (QuerySet[MenuItem])
         desserts (QuerySet[MenuItem])
-    '''
-    starters = MenuItem.objects.filter(category='starter')
-    mains = MenuItem.objects.filter(category='main')
-    desserts = MenuItem.objects.filter(category='dessert')
+    """
+    starters = MenuItem.objects.filter(category="starter")
+    mains = MenuItem.objects.filter(category="main")
+    desserts = MenuItem.objects.filter(category="dessert")
 
     return render(
         request,
-        'menu/menu.html',
+        "menu/menu.html",
         {
-            'starters': starters,
-            'mains': mains,
-            'desserts': desserts,
-        }
+            "starters": starters,
+            "mains": mains,
+            "desserts": desserts,
+        },
     )

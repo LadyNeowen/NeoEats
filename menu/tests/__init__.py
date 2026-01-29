@@ -1,1 +1,1 @@
-'''Marks the Menu app test directory as a Python package.'''
+"""Marks the Menu app test directory as a Python package."""
