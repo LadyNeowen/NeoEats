@@ -12,10 +12,10 @@
     <h2 class='menu-category'>Starters</h2>
     {% for item in starters %}
     <div class='menu-item'>
-        <h2>
+        <h3 class="menu-item-title">
             {{ item.name }}
             <span class='price'>{{ item.price }} kr</span>
-        </h2>
+        </h3>
         <p class='description'>{{ item.description }}</p>
     </div>
     {% empty %}
@@ -28,10 +28,10 @@
     <h2 class='menu-category'>Main Courses</h2>
     {% for item in mains %}
     <div class='menu-item'>
-        <h2>
+        <h3 class="menu-item-title">
             {{ item.name }}
             <span class='price'>{{ item.price }} kr</span>
-        </h2>
+        </h3>
         <p class='description'>{{ item.description }}</p>
     </div>
     {% empty %}
@@ -44,10 +44,10 @@
     <h2 class='menu-category'>Desserts</h2>
     {% for item in desserts %}
     <div class='menu-item'>
-        <h2>
+        <h3 class="menu-item-title">
             {{ item.name }}
             <span class='price'>{{ item.price }} kr</span>
-        </h2>
+        </h3>
         <p class='description'>{{ item.description }}</p>
     </div>
     {% empty %}
