@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Edit booking{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1>Edit booking</h1>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-primary" type="submit">
+            Save changes
+        </button>
+        <a class="btn btn-link" href="{% url 'my_bookings' %}">
+            Cancel
+        </a>
+    </form>
+
+</div>
+{% endblock %}

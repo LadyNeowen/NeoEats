@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
-{% block title %}Log in{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 
 <div class="container mt-4" style="max-width: 600px;">
-    <h1>Log in</h1>
+    <h1>Login</h1>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        Please check your username and password and try again.
+    </div>
+    {% endif %}
 
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-primary" type="submit">Log in</button>
+        <button class="btn btn-primary" type="submit">Login</button>
     </form>
 </div>
 {% endblock %}

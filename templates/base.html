@@ -41,6 +41,13 @@
                     <a class='nav-link' href='{% url "book_table" %}'>Book a table</a>
                 </li>
 
+                {% if user.is_authenticated %}
+                <li class="nav-item {% if url_name == 'my_bookings' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'my_bookings' %}">My bookings</a>
+                </li>
+                {% endif %}
+
+
                 <li class='nav-item dropdown
                     {% if url_name == "about" or url_name == "about_gallery" or url_name == "about_collaborations" %}
                         active
