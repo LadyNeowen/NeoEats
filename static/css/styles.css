@@ -280,6 +280,35 @@ main {
     border-radius: 10px;
 }
 
+/* ------------------------- */
+/* Gallery Page              */
+/* ------------------------- */
+
+.gallery-page {
+    padding: 60px 20px 20px;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f0c040;
+    margin-bottom: 30px;
+}
+
+.gallery-page h2.gallery-item-title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #141111;
+    margin: 12px 0 6px;
+    padding: 0;
+}
+
+.gallery-item-desc {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
 
 /* ------------------------- */
 /* Collaborations Page       */
@@ -556,6 +585,10 @@ main {
     .booking-card {
         max-width: 500px;
     }
+
+    .gallery-title {
+        font-size: 2.2rem;
+    }
 }
 
 /* ≤ 768px */
@@ -662,6 +695,10 @@ main {
     .booking-btn {
         font-size: 1rem;
         padding: 10px;
+    }
+
+    .gallery-title {
+        font-size: 1.8rem;
     }
 }
 
