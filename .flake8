@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 100
+extend-ignore = E501,E504
+exclude = .venv,venv,__pycache__,.git,.ipynb_checkpoints,**/*.ipynb,migrations

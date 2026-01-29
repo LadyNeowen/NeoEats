@@ -1,8 +1,6 @@
 """Tests for Core admin configuration."""
 
 from django.test import SimpleTestCase
-from django.contrib import admin
-from core import admin as core_admin
 
 
 class CoreAdminTests(SimpleTestCase):
