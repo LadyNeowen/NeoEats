@@ -3,19 +3,34 @@
 
 {% block content %}
 
-<div class="container mt-4" style="max-width: 600px;">
-    <h1>Login</h1>
+<div class="login-bg">
+    <div class="container">
 
-    {% if form.errors %}
-    <div class="alert alert-danger">
-        Please check your username and password and try again.
+        <div class="login-card">
+
+            <h1 class="h3">Welcome back</h1>
+            <p class="login-subtitle">
+                Log in to manage your bookings and reservations.
+            </p>
+
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                Please check your username and password and try again.
+            </div>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button class="neo-btn mt-3" type="submit">
+                    Log in
+                </button>
+            </form>
+
+        </div>
+
     </div>
-    {% endif %}
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-primary" type="submit">Login</button>
-    </form>
 </div>
+
 {% endblock %}

@@ -1,30 +1,30 @@
-'''
+"""
 Models for the Booking app.
 
 Includes:
 - Booking: Table reservation details.
 - NewsletterSignup: Email subscription entries.
-'''
+"""
 
 from django.db import models
 from django.conf import settings
 
 
 class Booking(models.Model):
-    '''Represents a table reservation at NeoEats.'''
-    
+    """Represents a table reservation at NeoEats."""
+
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='bookings',
+        related_name="bookings",
         null=True,
         blank=True,
     )
 
     STATUS_CHOICES = [
-        ('pending', 'Pending'),
-        ('approved', 'Approved'),
-        ('cancelled', 'Cancelled'),
+        ("pending", "Pending"),
+        ("approved", "Approved"),
+        ("cancelled", "Cancelled"),
     ]
 
     name = models.CharField(max_length=100)
@@ -40,21 +40,21 @@ class Booking(models.Model):
     status = models.CharField(
         max_length=10,
         choices=STATUS_CHOICES,
-        default='pending',
+        default="pending",
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        unique_together = ('date', 'time')  # Prevent double bookings
+        unique_together = ("date", "time")  # Prevent double bookings
 
     def __str__(self):
-        return f'Booking for {self.name} on {self.date} at {self.time}'
+        return f"Booking for {self.name} on {self.date} at {self.time}"
 
 
 class NewsletterSignup(models.Model):
-    '''Stores newsletter subscriber email addresses.'''
+    """Stores newsletter subscriber email addresses."""
 
     email = models.EmailField(unique=True)
     created_at = models.DateTimeField(auto_now_add=True)

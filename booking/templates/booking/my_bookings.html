@@ -2,59 +2,75 @@
 {% block title %}My bookings{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="my-bookings-bg">
 
-    <h1>My bookings</h1>
+    <div class="my-bookings-wrapper">
 
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-info">{{ message }}</div>
-    {% endfor %}
-    {% endif %}
+        <!-- Left: Bookings -->
+        <div class="my-bookings-card">
 
-    <div class="mb-3">
-        <a class="btn btn-primary" href="{% url 'book_table' %}">
-            Create new booking
-        </a>
+            <h1 class="mb-4">My bookings</h1>
+
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+
+            <div class="mb-3">
+                <a class="btn btn-primary" href="{% url 'book_table' %}">
+                    Create new booking
+                </a>
+            </div>
+
+            {% if bookings %}
+            <div class="table-responsive">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Guests</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for b in bookings %}
+                        <tr>
+                            <td>{{ b.date }}</td>
+                            <td>{{ b.time }}</td>
+                            <td>{{ b.guests }}</td>
+                            <td>{{ b.status }}</td>
+
+                            <td class="text-right">
+
+                                <a class="btn btn-sm btn-outline-secondary" href="{% url 'edit_booking' b.id %}">
+                                    Edit
+                                </a>
+
+                                <a class="btn btn-sm btn-outline-danger" href="{% url 'cancel_booking' b.id %}">
+                                    Cancel
+                                </a>
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            {% else %}
+            <p>You have no bookings yet.</p>
+            {% endif %}
+
+        </div>
+
+        <!-- Right: Image -->
+        <div class="my-bookings-image"></div>
+
     </div>
-
-    {% if bookings %}
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Guests</th>
-                    <th>Status</th>
-                    <th></th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {% for b in bookings %}
-                <tr>
-                    <td>{{ b.date }}</td>
-                    <td>{{ b.time }}</td>
-                    <td>{{ b.guests }}</td>
-                    <td>{{ b.status }}</td>
-                    <td class="text-right">
-                        <a class="btn btn-sm btn-outline-secondary" href="{% url 'edit_booking' b.id %}">
-                            Edit
-                        </a>
-                        <a class="btn btn-sm btn-outline-danger" href="{% url 'cancel_booking' b.id %}">
-                            Cancel booking
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-
-        </table>
-    </div>
-    {% else %}
-    <p>You have no bookings yet.</p>
-    {% endif %}
-
 </div>
 {% endblock %}

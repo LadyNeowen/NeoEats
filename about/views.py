@@ -1,18 +1,18 @@
-'''
+"""
 Views for the About app.
 
 Handles rendering of:
 - The About page
 - The Gallery page
 - The Collaborations With Farmers page
-'''
+"""
 
 from django.shortcuts import render
 from .models import AboutPage, GalleryImage, CollaborationPage
 
 
 def about(request):
-    '''
+    """
     Render the About page.
 
     Retrieves:
@@ -23,13 +23,13 @@ def about(request):
 
     Context:
         about_page (AboutPage): Content for the About page.
-    '''
+    """
     about_page = AboutPage.objects.first()
-    return render(request, 'about/about.html', {'about_page': about_page})
+    return render(request, "about/about.html", {"about_page": about_page})
 
 
 def about_gallery(request):
-    '''
+    """
     Render the Gallery page.
 
     Retrieves:
@@ -40,17 +40,17 @@ def about_gallery(request):
 
     Context:
         images (QuerySet[GalleryImage]): List of images to display.
-    '''
+    """
     images = GalleryImage.objects.all()
     return render(
         request,
-        'about/gallery.html',
-        {'images': images},
+        "about/gallery.html",
+        {"images": images},
     )
 
 
 def about_collaborations(request):
-    '''
+    """
     Render the Collaborations With Farmers page.
 
     Retrieves:
@@ -62,10 +62,10 @@ def about_collaborations(request):
 
     Context:
         collaboration_page (CollaborationPage): Page content.
-    '''
+    """
     collaboration_page = CollaborationPage.objects.first()
     return render(
         request,
-        'about/collaborations_with_farmers.html',
-        {'collaboration_page': collaboration_page},
+        "about/collaborations_with_farmers.html",
+        {"collaboration_page": collaboration_page},
     )

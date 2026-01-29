@@ -8,8 +8,6 @@ from pathlib import Path
 
 import dj_database_url
 
-
-
 # Load environment variables (local development)
 if os.path.isfile("env.py"):
     import env  # noqa: F401
@@ -42,11 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts",
-
     # Cloudinary
     "cloudinary_storage",
     "cloudinary",
-
     # Local apps
     "core",
     "menu",
@@ -58,7 +54,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -106,24 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
             "UserAttributeSimilarityValidator"
         )
     },
-    {
-        "NAME": (
-            "django.contrib.auth.password_validation."
-            "MinimumLengthValidator"
-        )
-    },
-    {
-        "NAME": (
-            "django.contrib.auth.password_validation."
-            "CommonPasswordValidator"
-        )
-    },
-    {
-        "NAME": (
-            "django.contrib.auth.password_validation."
-            "NumericPasswordValidator"
-        )
-    },
+    {"NAME": ("django.contrib.auth.password_validation." "MinimumLengthValidator")},
+    {"NAME": ("django.contrib.auth.password_validation." "CommonPasswordValidator")},
+    {"NAME": ("django.contrib.auth.password_validation." "NumericPasswordValidator")},
 ]
 
 # Internationalization
@@ -141,16 +121,14 @@ if "runserver" in sys.argv or "test" in sys.argv:
     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 else:
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    
+
 WHITENOISE_USE_FINDERS = True
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Cloudinary
-DEFAULT_FILE_STORAGE = (
-    "cloudinary_storage.storage.MediaCloudinaryStorage"
-)
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Security headers
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -168,9 +146,7 @@ LOGGING = {
 
 # Email backend
 if DEBUG:
-    EMAIL_BACKEND = (
-        "django.core.mail.backends.console.EmailBackend"
-    )
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/booking/my-bookings/"

@@ -2,14 +2,25 @@
 {% block title %}Sign up{% endblock %}
 
 {% block content %}
+<div class="signup-bg">
+    <div class="container">
 
-<div class="container mt-4" style="max-width: 600px;">
-    <h1>Sign up</h1>
+        <div class="signup-card text-center">
+            <h1 class="h3">Sign up</h1>
+            <p class="signup-subtitle">
+                Create an account to book and manage your reservations.
+            </p>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-primary" type="submit">Create Account</button>
-    </form>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button class="neo-btn mt-3" type="submit">
+                    Create Account
+                </button>
+            </form>
+        </div>
+
+    </div>
 </div>
 {% endblock %}

@@ -58,6 +58,7 @@ The site is optimised for desktop, tablet, and mobile devices.
 
 ---
 
+python manage.py runserver
 ## Features
 
 ### Core Features

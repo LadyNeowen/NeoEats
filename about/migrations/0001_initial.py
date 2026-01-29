@@ -7,33 +7,61 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='AboutPage',
+            name="AboutPage",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(default='About NeoEats', max_length=200)),
-                ('content', models.TextField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(default="About NeoEats", max_length=200)),
+                ("content", models.TextField()),
             ],
         ),
         migrations.CreateModel(
-            name='CollaborationPage',
+            name="CollaborationPage",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(default='Working With Our Farmers', max_length=200)),
-                ('content', models.TextField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        default="Working With Our Farmers", max_length=200
+                    ),
+                ),
+                ("content", models.TextField()),
             ],
         ),
         migrations.CreateModel(
-            name='GalleryImage',
+            name="GalleryImage",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('description', models.TextField(blank=True, max_length=300)),
-                ('image', models.ImageField(upload_to='gallery/')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200)),
+                ("description", models.TextField(blank=True, max_length=300)),
+                ("image", models.ImageField(upload_to="gallery/")),
             ],
         ),
     ]

@@ -7,27 +7,45 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Booking',
+            name="Booking",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('phone', models.CharField(max_length=20)),
-                ('email', models.EmailField(max_length=254)),
-                ('date', models.DateField()),
-                ('time', models.TimeField()),
-                ('guests', models.PositiveIntegerField()),
-                ('notes', models.TextField(blank=True)),
-                ('status', models.CharField(choices=[('pending', 'Pending'), ('approved', 'Approved'), ('cancelled', 'Cancelled')], default='pending', max_length=10)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("phone", models.CharField(max_length=20)),
+                ("email", models.EmailField(max_length=254)),
+                ("date", models.DateField()),
+                ("time", models.TimeField()),
+                ("guests", models.PositiveIntegerField()),
+                ("notes", models.TextField(blank=True)),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("pending", "Pending"),
+                            ("approved", "Approved"),
+                            ("cancelled", "Cancelled"),
+                        ],
+                        default="pending",
+                        max_length=10,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
             ],
             options={
-                'unique_together': {('date', 'time')},
+                "unique_together": {("date", "time")},
             },
         ),
     ]

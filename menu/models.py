@@ -1,20 +1,20 @@
-'''
+"""
 Models for the Menu app.
 
 Includes:
 - MenuItem: Represents a menu entry such as a starter, main course, or dessert.
-'''
+"""
 
 from django.db import models
 
 
 class MenuItem(models.Model):
-    '''Represents a single dish in the restaurant menu.'''
+    """Represents a single dish in the restaurant menu."""
 
     CATEGORY_CHOICES = [
-        ('starter', 'Starter'),
-        ('main', 'Main Course'),
-        ('dessert', 'Dessert'),
+        ("starter", "Starter"),
+        ("main", "Main Course"),
+        ("dessert", "Dessert"),
     ]
 
     name = models.CharField(max_length=100)
@@ -26,4 +26,4 @@ class MenuItem(models.Model):
     gluten_free = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.name} ({self.get_category_display()})'
+        return f"{self.name} ({self.get_category_display()})"
