@@ -2,7 +2,6 @@
 
 from django.test import SimpleTestCase
 from django.apps import apps
-from core.apps import CoreConfig
 
 
 class CoreConfigTest(SimpleTestCase):

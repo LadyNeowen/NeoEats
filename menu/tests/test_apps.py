@@ -2,7 +2,6 @@
 
 from django.test import SimpleTestCase
 from django.apps import apps
-from menu.apps import MenuConfig
 
 
 class MenuConfigTests(SimpleTestCase):
