@@ -186,15 +186,18 @@ main {
     font-style: italic;
 }
 
+/* Page title */
 .menu-page h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #f0c040;
+    margin: 0 0 40px 0;
 }
 
-/* Category Headings */
+/* Category headings (use on h2) */
 .menu-category {
     margin-top: 40px;
+    margin-bottom: 15px;
     font-size: 1.5rem;
     font-weight: bold;
     color: #f0c040;
@@ -208,44 +211,57 @@ main {
     margin: 40px 0;
 }
 
-/* Items */
+/* Menu item wrapper */
 .menu-item {
     margin-bottom: 20px;
 }
 
-/* Changed from h5 -> h2, keep same appearance */
-.menu-item h2 {
+/* Dish title + price (use on h3) */
+.menu-item-title {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+
     font-size: 1.2rem;
     color: #fff;
+
     margin: 0;
-    /* IMPORTANT: remove default h2 spacing */
     padding: 0;
+
+    /* Remove default heading spacing in some browsers */
+    margin-block: 0;
+    font-weight: 600;
 }
 
-.menu-item .price {
+/* Price */
+.menu-item-title .price {
     color: #f0c040;
     font-weight: bold;
 }
 
+/* Description text */
 .menu-item .description {
     color: #aaa;
     font-size: 0.95rem;
-    margin-left: 2px;
+    margin: 6px 0 0 2px;
+    font-style: italic;
 }
 
+/* Notes box */
 .menu-notes-box {
     background-color: #a31236;
     text-align: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    margin-top: 25px;
 }
 
 .menu-notes {
     font-style: italic;
     font-weight: bold;
     color: #222;
+    margin: 0;
 }
-
 
 /* ------------------------- */
 /* About Page                */
@@ -533,7 +549,7 @@ main {
         font-size: 2.2rem;
     }
 
-    .menu-item h2 {
+    .menu-item-title {
         font-size: 1.1rem;
     }
 
@@ -625,7 +641,7 @@ main {
         font-size: 1.2rem;
     }
 
-    .menu-item h2 {
+    .menu-item-title {
         font-size: 1rem;
     }
 
