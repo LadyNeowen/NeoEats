@@ -3,22 +3,22 @@
 {% block title %}Gallery{% endblock %}
 
 {% block content %}
-<div class='container mt-4'>
-    <h1>Gallery</h1>
+<div class='container mt-4 gallery-page'>
+    <h1 class="gallery-title">Gallery</h1>
 
     <div class='row'>
 
         {% for img in images %}
-        <div class='col-md-4 mb-3'>
+        <div class='col-md-4 mb-3 gallery-item'>
 
             {# Display the image with alt text from the database #}
             <img src='{{ img.image.url }}' 
                  alt='{{ img.title }}' 
                  class='img-fluid rounded'>
 
-            <h5>{{ img.title }}</h5>
+            <h2 class="gallery-item-title">{{ img.title }}</h2>
 
-            <p>{{ img.description }}</p>
+            <p class="gallery-item-desc">{{ img.description }}</p>
         </div>
         {% endfor %}
 
