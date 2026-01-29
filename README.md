@@ -179,11 +179,13 @@ No known unresolved bugs at this time.
 
 ---
 
-## Validation
+## Validation and formatting
 
 * Python: PEP8 compliance
 * HTML: W3C validation
 * CSS: W3C validation
+* black .
+* flake8 .
 
 No major validation errors detected.
 
