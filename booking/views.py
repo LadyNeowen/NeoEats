@@ -89,3 +89,73 @@ def book_table(request):
             'newsletter_form': newsletter_form,
         },
     )
+@login_required
+def my_bookings(request):
+    '''
+    Display the logged in user's bookings.
+    '''
+    bookings = (
+        Booking.objects
+        .filter(user=request.user)
+        .order_by('-date', '-time')
+    )
+    return render(
+        request,
+        'booking/my_bookings.html',
+        {'bookings': bookings},
+    )
+    
+@login_required
+def edit_booking(request, booking_id):
+    '''
+    Allow the user to edit one of their bookings.
+    '''
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+
+        if form.is_valid():
+            try:
+                form.save()
+                messages.success(request, 'Your booking has been updated!')
+                return redirect('my_bookings')
+
+            except IntegrityError:
+                messages.error(
+                    request,
+                    (
+                        'Sorry, that time slot is already booked. '
+                        'Please choose another date or time.'
+                    ),
+                )
+
+    else:
+        form = BookingForm(instance=booking)
+
+    return render(
+        request,
+        'booking/edit_booking.html',
+        {'form': form, 'booking': booking},
+    )
+    
+    
+@login_required
+def cancel_booking(request, booking_id):
+    '''
+    Allow the user to cancel (delete) one of their bookings.
+    '''
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+
+    if request.method == 'POST':
+        booking.status = 'cancelled'
+        booking.save(update_fields=['status'])
+        messages.success(request, 'Your booking has been cancelled.')
+        return redirect('my_bookings')
+
+    return render(
+        request,
+        'booking/cancel_booking.html',
+        {'booking': booking},
+    )
+    

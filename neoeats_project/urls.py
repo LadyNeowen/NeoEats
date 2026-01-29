@@ -21,8 +21,8 @@ urlpatterns = [
     path('about/', include('about.urls')),
     path('booking/', include('booking.urls')),
     
-    path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 # Serve media files in development
