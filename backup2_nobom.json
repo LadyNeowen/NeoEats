@@ -1,0 +1,253 @@
+[
+{
+  "model": "menu.menuitem",
+  "pk": 1,
+  "fields": {
+    "name": "Vegeriarian soup",
+    "description": "Soup made with seasonal vegetables (Can vary)",
+    "price": "125",
+    "category": "starter",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 2,
+  "fields": {
+    "name": "Bruschetta",
+    "description": "Served with tomato, basil, olivoil and garlic",
+    "price": "123",
+    "category": "starter",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 3,
+  "fields": {
+    "name": "Deer Carpaccio",
+    "description": "Served with arugula and vinegrette",
+    "price": "150",
+    "category": "starter",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 4,
+  "fields": {
+    "name": "Veggie Oumph",
+    "description": "Fried veggie oumph served with homemade fries, salad and a cranberry sauce",
+    "price": "210",
+    "category": "main",
+    "vegetarian": true,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 5,
+  "fields": {
+    "name": "Reindeer meatplatter (2p)",
+    "description": "Meat platter for two with potato gratine, salad and bread, served with a rich blackberry sauce",
+    "price": "350",
+    "category": "main",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 6,
+  "fields": {
+    "name": "Veggie potstickers",
+    "description": "Veggie filled dumplings with bread, salad rice and a secret sauce",
+    "price": "210",
+    "category": "main",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 7,
+  "fields": {
+    "name": "Truffle ravioli",
+    "description": "Served with shaved truffles, a rich tomato sauce and browned butter",
+    "price": "250",
+    "category": "main",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 8,
+  "fields": {
+    "name": "Honey glaced french toast",
+    "description": "Served with berries and browned butter",
+    "price": "125",
+    "category": "dessert",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 9,
+  "fields": {
+    "name": "Chocolate Fondant",
+    "description": "Served with whipped cream and berries",
+    "price": "125",
+    "category": "dessert",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "menu.menuitem",
+  "pk": 10,
+  "fields": {
+    "name": "Cloudberry pannacotta",
+    "description": "",
+    "price": "150",
+    "category": "dessert",
+    "vegetarian": false,
+    "gluten_free": false
+  }
+},
+{
+  "model": "about.aboutpage",
+  "pk": 1,
+  "fields": {
+    "title": "About NeoEats",
+    "content": "Welcome to NeoEats, where modern culinary creativity meets the warmth of true hospitality.\r\nOur journey began with a small but passionate group of food lovers who believed that dining should be more than a meal ù it should be an experience.\r\n\r\nAt NeoEats, we blend fresh, locally sourced ingredients with innovative cooking techniques to create dishes that are both familiar and bold. Our menu changes with the seasons, inspired by the produce grown by farmers we know and trust.\r\n\r\nWe take pride in offering a welcoming environment where guests can relax, connect, and enjoy food crafted with care. Whether youÆre visiting for a casual dinner, a celebration, or simply a night out, our team is dedicated to making every moment memorable.\r\n\r\nThank you for being a part of our story ù we look forward to serving you."
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 1,
+  "fields": {
+    "title": "Honeyglazed french toast with berries",
+    "description": "",
+    "image": "image/upload/v1769710368/xos58yfgwv10olspavsr.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 2,
+  "fields": {
+    "title": "Our veggie oumph with fries",
+    "description": "",
+    "image": "image/upload/v1769710395/vtkqnypulaamdfyh6ecd.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 3,
+  "fields": {
+    "title": "Chef working on our signature dish",
+    "description": "",
+    "image": "image/upload/v1769710412/aolcyq2ulc4rjex5mwzh.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 4,
+  "fields": {
+    "title": "Cozy bar interior",
+    "description": "",
+    "image": "image/upload/v1769710436/l9pniwvpeofit0jcl699.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 5,
+  "fields": {
+    "title": "Meat platter for two",
+    "description": "",
+    "image": "image/upload/v1769710456/mcv5ppdqc7fsczpcvjk9.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 6,
+  "fields": {
+    "title": "Cooking over open flame",
+    "description": "",
+    "image": "image/upload/v1769710471/fpry3p4y6s2zc7e3uyrv.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 7,
+  "fields": {
+    "title": "Veggie dumplings with secret sauce",
+    "description": "",
+    "image": "image/upload/v1769710502/tvygm0h05boraghjyvcf.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 8,
+  "fields": {
+    "title": "Chef being on fire",
+    "description": "",
+    "image": "image/upload/v1769710515/r2mjqldpedxabeaxqok9.jpg"
+  }
+},
+{
+  "model": "about.galleryimage",
+  "pk": 9,
+  "fields": {
+    "title": "Restaurant interior",
+    "description": "",
+    "image": "image/upload/v1769710547/ndcg5mumya1wjjw46wnh.jpg"
+  }
+},
+{
+  "model": "about.collaborationpage",
+  "pk": 1,
+  "fields": {
+    "title": "Working With Our Farmers",
+    "content": "At NeoEats, our dishes begin long before they reach your table.\r\nThey start in the hands of the farmers who grow, harvest, and care for the ingredients we use every day.\r\n\r\nWe work closely with small local farms who share our passion for quality, sustainability, and honest food.\r\nTogether, we make sure that every plate tells a story ù one of freshness, respect for nature, and community working hand in hand."
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 1,
+  "fields": {
+    "user": 4,
+    "name": "Karen",
+    "phone": "0737236767",
+    "email": "Alicia.Westerlund@outlook.com",
+    "date": "2026-01-30",
+    "time": "17:30:00",
+    "guests": 4,
+    "notes": "",
+    "status": "cancelled",
+    "created_at": "2026-01-29T00:23:02.316Z",
+    "updated_at": "2026-01-29T00:23:12.833Z"
+  }
+},
+{
+  "model": "booking.booking",
+  "pk": 2,
+  "fields": {
+    "user": 4,
+    "name": "Alicia Westerlund",
+    "phone": "0737236767",
+    "email": "Alicia.Westerlund@outlook.com",
+    "date": "2026-01-30",
+    "time": "18:35:00",
+    "guests": 4,
+    "notes": "",
+    "status": "cancelled",
+    "created_at": "2026-01-29T00:35:14.281Z",
+    "updated_at": "2026-01-29T00:35:22.863Z"
+  }
+}
+]
