@@ -58,7 +58,6 @@ The site is optimised for desktop, tablet, and mobile devices.
 
 ---
 
-python manage.py runserver
 ## Features
 
 ### Core Features
@@ -160,14 +159,18 @@ Each Django app follows a consistent testing structure:
 
 ---
 
-## Bug Fixes
-
 ### Resolved Issues
 * Heroku staticfiles 500 error
 * Cloudinary URL misconfiguration
 * Static directory conflicts
 * Accidental virtual environment commits
 * Deployment environment inconsistencies
+
+During development, multiple bugs and validation issues were resolved using official documentation,
+browser developer tools, and online developer communities. This includes fixing HTML/CSS validation errors,
+form rendering issues, and responsive layout problems.
+
+
 
 All known critical issues have been resolved.
 
@@ -184,8 +187,8 @@ No known unresolved bugs at this time.
 * Python: PEP8 compliance
 * HTML: W3C validation
 * CSS: W3C validation
-* black .
-* flake8 .
+* Python formatting: Black
+* Linting: Flake8
 
 No major validation errors detected.
 
@@ -222,15 +225,22 @@ No major validation errors detected.
 
 ---
 
+## Project Goals
+
+The main goal of this project was to develop a fully functional restaurant website with dynamic content management,
+secure user authentication, and a complete booking system, while following modern web standards and best practices.
+
+---
+
 ## References
 
 ### Authentication & Permissions
-* https://docs.djangoproject.com/en/6.0/topics/auth/
+* https://docs.djangoproject.com/en/5.2/topics/auth/
 * https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Authentication
 
 ### Forms & Views
-* https://docs.djangoproject.com/en/6.0/topics/forms/
-* https://docs.djangoproject.com/en/6.0/topics/http/shortcuts/#get-object-or-404
+* https://docs.djangoproject.com/en/5.2/topics/forms/
+* https://docs.djangoproject.com/en/5.2/topics/http/shortcuts/#get-object-or-404
 
 ### Models
 * https://docs.djangoproject.com/en/5.2/topics/db/models/
@@ -256,10 +266,10 @@ No major validation errors detected.
 * https://github.com/DiarmuidHenry/Restaurant-Booking  
 * https://www.youtube.com/watch?v=DIFaOkxy6TE
 
-* ## ChatGPT
-* Docstring documentations
+### ChatGPT
+* Docstring documentation
 * Debugging and assistance
-* Swedish translation and explinations
+* Swedish translations and explinations
 * Structuring and folder build
 * Test strategy guidance
 
