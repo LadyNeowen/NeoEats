@@ -55,6 +55,9 @@
                                     Cancel
                                 </a>
 
+                                <a class="btn btn-sm btn-danger" href="{% url 'delete_booking' b.id %}">
+                                    Delete
+                                </a>
                             </td>
                         </tr>
                         {% endfor %}
