@@ -317,7 +317,11 @@ All HTML files were validated using the **W3C Markup Validation Service**.
 
 CSS styling was validated using the **W3C CSS Validation Service**.
 
-![CSS Validation](./README_images/css_validation.jpg)
+The validator reported warnings related to external third-party libraries such as **Bootstrap** and **Font Awesome**, which are loaded via CDN. These warnings are expected and do not affect the functionality or styling of the custom project code.
+
+No major errors were detected in the project’s own CSS.
+
+![CSS Validation](README_images/css_validation.jpg)
 
 ### Summary
 
