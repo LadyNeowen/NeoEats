@@ -507,6 +507,7 @@ Acceptance Criteria:
 * Swedish translations and explinations
 * Structuring and folder build
 * Test strategy guidance
+* Cross checking Assessment criteria and required fixes
 
 ---
 
