@@ -213,7 +213,7 @@ Admin users can manage:
 
 Each Django app follows a consistent testing structure:
 
-
+```text
 app_name/tests/
 ├── __init__.py
 ├── test_models.py
@@ -223,6 +223,8 @@ app_name/tests/
 ├── test_admin.py
 ├── test_apps.py
 └── test_forms.py   (Booking app only)
+```
+
 
 ---
 
@@ -260,15 +262,35 @@ app_name/tests/
 
 ### Running Tests
 
-**Test suite result: 45 tests across about, booking, core, and menu apps. All passing.**
+**Test suite result: 49 tests across about, booking, core, and menu apps. All passing.**
 
 ### Manual Testing
-* Cross-browser testing (Chrome, Edge, Safari)
-* Mobile responsiveness
-* Form validation
-* Navigation flow
-* Media uploads
-* Production static/media handling
+The following manual tests were carried out to verify the main user functionality across the site.
+
+| Feature | Test Performed | Expected Outcome | Actual Outcome | Pass/Fail |
+|---|---|---|---|---|
+| Navigation | Clicked all navbar links on desktop and mobile | Each link should take the user to the correct page without errors | All links navigated correctly and pages loaded as expected | Pass |
+| Home page responsiveness | Viewed the homepage on desktop, tablet, and mobile screen sizes | Layout should remain responsive and readable on all screen sizes | The homepage adjusted correctly across all tested devices | Pass |
+| User registration | Submitted the sign-up form with valid user details | A new user account should be created successfully | User account was created and login was possible | Pass |
+| User login | Logged in with valid registered credentials | User should be logged in and redirected appropriately | Login worked successfully and navbar reflected authentication state | Pass |
+| User logout | Clicked the logout option while signed in | User should be logged out and returned to the site safely | Logout worked as expected | Pass |
+| Create booking | Submitted the booking form with valid date, time, and guest details | Booking should be saved to the database and confirmation message shown | Booking was saved and success message displayed | Pass |
+| Booking validation | Submitted a booking form with invalid or missing required fields | Form should not submit and validation errors should be shown | Validation errors displayed correctly and booking was not saved | Pass |
+| Monday booking restriction | Attempted to create a booking on a Monday | Booking should be prevented and an error message shown | Booking was blocked and the correct error message was displayed | Pass |
+| Duplicate booking slot | Attempted to book an already reserved date and time | Booking should not be saved and a warning/error should be shown | Duplicate booking was prevented and an error message displayed | Pass |
+| View bookings | Logged in and opened the My Bookings page | User should see only their own bookings | Only bookings belonging to the logged-in user were displayed | Pass |
+| Edit booking | Edited an existing booking and submitted updated details | Booking should update successfully and show a success message | Booking updated correctly and changes were reflected on the page | Pass |
+| Cancel booking | Selected cancel on an existing booking | Booking status should update to cancelled | Booking status changed to cancelled and confirmation message was shown | Pass |
+| Delete booking | Selected delete on an existing booking and confirmed deletion | Booking should be permanently removed from the database | Booking was deleted successfully and no longer appeared in My Bookings | Pass |
+| Delete confirmation page | Clicked delete on a booking | User should be shown a confirmation page before deletion | Confirmation page displayed the booking details and delete button correctly | Pass |
+| Newsletter signup | Submitted the newsletter form with a valid email address | Email should be saved and success message displayed | Newsletter subscription was saved successfully | Pass |
+| Duplicate newsletter signup | Submitted an email already subscribed to the newsletter | Duplicate signup should be prevented and an error shown | Duplicate subscription was blocked and correct message displayed | Pass |
+| Access control for bookings | Attempted to access another user's booking edit/delete route while logged in as a different user | Access should be denied or object not found | Unauthorized booking access was prevented | Pass |
+| Admin panel | Logged into Django admin and checked registered models | Admin should display and manage site data correctly | Models were available and manageable through Django admin | Pass |
+| Media and images | Opened gallery and uploaded/admin-managed images | Images should load correctly without broken links | Images displayed correctly throughout the site | Pass |
+| Cross-browser testing | Tested the deployed site in Chrome, Edge, and Safari | Site should function consistently across supported browsers | Core functionality worked correctly across tested browsers | Pass |
+
+All tested features behaved as expected during manual testing on the deployed application.
 
 ---
 
