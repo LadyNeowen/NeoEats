@@ -163,6 +163,7 @@ def cancel_booking(request, booking_id):
 
     return render(request, "booking/cancel_booking.html", {"booking": booking})
 
+
 class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     Allow a logged-in user to delete their own booking from the database.
@@ -174,6 +175,7 @@ class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         booking = self.get_object()
         return self.request.user == booking.user
+
 
 @login_required
 def delete_booking(request, booking_id):

@@ -22,6 +22,101 @@ The site is optimised for desktop, tablet, and mobile devices.
 
 ---
 
+## UX Design
+
+### Design Goals
+
+The design of NeoEats focuses on simplicity, clarity, and accessibility.  
+The primary goal was to create a clean restaurant website where users can easily explore the menu, view images, and book a table.
+
+Key design priorities:
+
+* Clear navigation across all devices
+* Fast page loading using CDN-hosted media
+* Responsive layout for mobile and tablet users
+* Minimal visual clutter to highlight food imagery
+
+The layout uses a traditional restaurant structure:
+
+Home → Menu → Booking → About → Gallery
+
+This ensures that new users can quickly understand the website and access the booking system.
+
+---
+
+### Colour Scheme
+
+The design uses a neutral colour palette inspired by modern restaurant branding.
+
+* Dark tones for navigation and headers
+* Light backgrounds for readability
+* Accent colours used for buttons and interactive elements
+
+This provides strong contrast and improves accessibility.
+
+---
+
+### Typography
+
+The typography is designed for readability across all screen sizes.
+
+* Headings emphasise key sections
+* Body text remains clean and readable
+* Consistent spacing improves scanning behaviour for users
+
+---
+
+## Wireframes
+
+Wireframes were created during the planning phase to define layout structure and user flow.
+
+### Desktop Wireframes
+
+* Home Page
+* Menu Page
+* Booking Page
+
+![Home Wireframe](./README_images/wireframe_home.png)
+
+![Menu Wireframe](./README_images/wireframe_menu.png)
+
+![Booking Wireframe](./README_images/wireframe_booking.png)
+
+### Mobile Wireframes
+
+Mobile layouts prioritise vertical scrolling and simplified navigation.
+
+![Mobile Wireframe](./README_images/wireframe_mobile.png)
+
+---
+
+## Database Schema
+
+The application uses a relational PostgreSQL database.
+
+Key models include:
+
+### Booking
+
+| Field | Type |
+|------|------|
+| user | ForeignKey |
+| name | CharField |
+| email | EmailField |
+| date | DateField |
+| time | TimeField |
+| guests | IntegerField |
+| status | CharField |
+
+Relationships:
+
+* Each booking is associated with a registered user.
+* Bookings can be created, edited, cancelled, or deleted by the owner.
+
+![Database Schema](./README_images/database_schema.jpg)
+
+---
+
 ## Pages & Functionality
 
 ### Home Page
@@ -70,11 +165,18 @@ The site is optimised for desktop, tablet, and mobile devices.
 * Accessible navigation
 
 ### Admin Features
+
+The Django Admin interface provides a simple content management system for restaurant staff.
+
+![Admin Dashboard](./README_images/admin_dashboard.jpg)
+
+Admin users can manage:
+
 * Image management
 * Menu management
 * Content editing
 * Booking administration
-* Clean admin interface
+* User accounts
 
 ### Technical Features
 * Django framework
@@ -98,9 +200,13 @@ The site is optimised for desktop, tablet, and mobile devices.
 
 ### Automated Testing
 
+![Test Results](./README_images/tests_results.jpg)
+
 Each Django app follows a consistent testing structure:
 
-```app_name/tests/
+```md
+```text
+app_name/tests/
 ├── __init__.py
 ├── test_models.py
 ├── test_views.py
@@ -109,7 +215,6 @@ Each Django app follows a consistent testing structure:
 ├── test_admin.py
 ├── test_apps.py
 └── test_forms.py   (Booking app only)
-```
 
 ---
 
@@ -182,34 +287,88 @@ No known unresolved bugs at this time.
 
 ---
 
-## Validation and formatting
+## Validation/testing and formatting
 
-* Python: PEP8 compliance
-* HTML: W3C validation
-* CSS: W3C validation
-* Python formatting: Black
-* Linting: Flake8
+The project was validated using several standard development and validation tools to ensure code quality and compliance with best practices.
 
-No major validation errors detected.
+### Python
+
+Python code follows **PEP8 standards** and was checked using **Flake8** to identify style issues and potential errors.
+
+Python formatting was also applied using **Black** to ensure consistent and clean code structure.
+
+![Flake8 Validation](./README_images/flake8.jpg)
+
+### HTML
+
+All HTML files were validated using the **W3C Markup Validation Service**.
+
+![HTML Validation](./README_images/html_validation.jpg)
+
+### CSS
+
+CSS styling was validated using the **W3C CSS Validation Service**.
+
+![CSS Validation](./README_images/css_validation.jpg)
+
+### Summary
+
+Validation tools used in this project:
+
+- Python: **PEP8 compliance**
+- HTML: **W3C validation**
+- CSS: **W3C validation**
+- Python formatting: **Black**
+- Linting: **Flake8**
+
+No major validation errors were detected.
 
 ---
 
-## Deployment
+### Deployment
 
-* Database migrations run automatically via Procfile release phase.
-* Prevents missing table errors on Heroku.
+### Local Deployment
 
-### Heroku Deployment Steps
+To run the project locally:
 
-1. Create a new Heroku app
-2. Add Python buildpack
-3. Configure environment variables:
-   * DATABASE_URL
-   * CLOUDINARY_URL
-   * SECRET_KEY
-4. Ensure .venv is excluded via .gitignore
-5. Push to Heroku:
-6. Run migrations and collectstatic
+1. Clone the repository 
+https://github.com/LadyNeowen/NeoEats
+
+2. Navigate into the project
+
+3. Create a virtual environment
+
+4. Activate the environment
+Windows: venv\Scripts\activate
+
+5. Install dependencies
+pip install -r requirements.txt
+
+6. Set environment variables
+Required variables:
+
+* SECRET_KEY
+* DATABASE_URL
+* CLOUDINARY_URL
+
+7. Run migrations
+python manage.py migrate
+
+8. Run the development server
+python manage.py runserver
+
+---
+
+### Heroku Deployment
+
+1. Create a Heroku app
+2. Connect GitHub repository
+3. Add environment variables:
+SECRET_KEY
+DATABASE_URL
+CLOUDINARY_URL
+4. Deploy the main branch
+5. Heroku runs migrations automatically using the Procfile release phase.
 
 ---
 
@@ -229,6 +388,54 @@ No major validation errors detected.
 
 The main goal of this project was to develop a fully functional restaurant website with dynamic content management,
 secure user authentication, and a complete booking system, while following modern web standards and best practices.
+
+---
+
+## Agile Development
+
+The project was developed using an Agile approach with GitHub Issues used to track user stories and tasks.
+
+### Example User Stories
+
+**User Story: Book a Table**
+
+As a customer  
+I want to book a table online  
+So that I can reserve a place at the restaurant.
+
+Acceptance Criteria:
+
+* User must be logged in
+* Booking form must validate inputs
+* Booking is saved in the database
+
+---
+
+**User Story: Edit Booking**
+
+As a user  
+I want to edit my booking  
+So that I can change the time or number of guests.
+
+Acceptance Criteria:
+
+* Existing booking data is prefilled
+* Changes update the database
+* Confirmation message displayed
+
+---
+
+**User Story: Delete Booking**
+
+As a user  
+I want to delete a booking  
+So that I can cancel my reservation permanently.
+
+Acceptance Criteria:
+
+* Delete option visible in "My Bookings"
+* Confirmation page displayed
+* Booking removed from database
 
 ---
 
