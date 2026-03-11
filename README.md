@@ -171,7 +171,7 @@ Relationships:
 * Create an account.
 * Make a table booking through the booking form.
 * Recieve confirmation that the booking request was submitted.
-* Manage booking by either cancelling or deleting it permanently.
+* Manage booking by either editing, cancelling or deleting it.
 * Sign up for the newsletter.
 
 ### Admin Features
