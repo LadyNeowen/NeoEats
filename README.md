@@ -305,13 +305,13 @@ Python code follows **PEP8 standards** and was checked using **Flake8** to ident
 
 Python formatting was also applied using **Black** to ensure consistent and clean code structure.
 
-![Flake8 Validation](./README_images/flake8.jpg)
+![Flake8 Validation](./README_images/flake8.png)
 
 ### HTML
 
 All HTML files were validated using the **W3C Markup Validation Service**.
 
-![HTML Validation](./README_images/html_validation.jpg)
+![HTML Validation](./README_images/html_validation.png)
 
 ### CSS
 
@@ -321,7 +321,8 @@ The validator reported warnings related to external third-party libraries such a
 
 No major errors were detected in the project’s own CSS.
 
-![CSS Validation](README_images/css_validation.jpg)
+![CSS Validation](./README_images/css_validation.png)
+
 
 ### Summary
 
