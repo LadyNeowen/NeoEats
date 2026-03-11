@@ -8,10 +8,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .forms import BookingForm, NewsletterSignupForm
 from .models import Booking
 
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
-from django.views.generic import DeleteView
-
 
 @login_required
 def book_table(request):
@@ -151,7 +147,7 @@ def edit_booking(request, booking_id):
 @login_required
 def cancel_booking(request, booking_id):
     """
-    Allow the user to cancel (delete) one of their bookings.
+    Allow the user to cancel one of their bookings by updating its status.
     """
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
 
@@ -162,19 +158,6 @@ def cancel_booking(request, booking_id):
         return redirect("my_bookings")
 
     return render(request, "booking/cancel_booking.html", {"booking": booking})
-
-
-class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    """
-    Allow a logged-in user to delete their own booking from the database.
-    """
-    model = Booking
-    template_name = "booking/booking_confirm_delete.html"
-    success_url = reverse_lazy("my_bookings")
-
-    def test_func(self):
-        booking = self.get_object()
-        return self.request.user == booking.user
 
 
 @login_required
