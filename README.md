@@ -1,5 +1,4 @@
 # NeoEats
-
 ## NeoEats Restaurant Website
 
 NeoEats is a modern, fully responsive restaurant website built with Django. It features a custom CMS, an image gallery powered by Cloudinary, and an online booking system. The project is deployed using Heroku.
@@ -214,8 +213,7 @@ Admin users can manage:
 
 Each Django app follows a consistent testing structure:
 
-```md
-```text
+
 app_name/tests/
 ├── __init__.py
 ├── test_models.py
