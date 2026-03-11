@@ -311,7 +311,7 @@ All known critical issues have been resolved.
 
 ## Known Issues
 
-No known unresolved bugs at this time.
+No major unresolved bugs are known at the time of submission.
 
 ---
 
@@ -364,45 +364,55 @@ No major validation errors were detected.
 
 To run the project locally:
 
-1. Clone the repository 
+1. Clone the repository:
 https://github.com/LadyNeowen/NeoEats
 
 2. Navigate into the project
 
-3. Create a virtual environment
+3. Create a virtual environment:
+python -m venv venv
 
-4. Activate the environment
-Windows: venv\Scripts\activate
+4. Activate the environment: 
+for Windows:
+venv\Scripts\activate
+for Mac/Linux:
+source venv/bin/activate
 
-5. Install dependencies
+5. Install dependencies:
 pip install -r requirements.txt
 
-6. Set environment variables
+6. Set environment variables:
 Required variables:
 
 * SECRET_KEY
 * DATABASE_URL
 * CLOUDINARY_URL
 
-7. Run migrations
+7. Apply database migrations:
 python manage.py migrate
 
-8. Run the development server
+8. Create an admin user (optional):
+python manage.py createsuperuser
+
+9. Run the development server:
 python manage.py runserver
+( The site should now be available at: http://127.0.0.1:8000/ )
 
 ---
 
 ### Heroku Deployment
 
-1. Create a Heroku app
-2. Connect GitHub repository
-3. Add environment variables:
+1. Create a Heroku app on the Heroku dashboard
+2. Connect to the GitHub repository: LadyNeowen/NeoEats
+3. Add environment variables in Config Vars:
 SECRET_KEY
 DATABASE_URL
 CLOUDINARY_URL
 4. Deploy the main branch
 5. Heroku runs migrations automatically using the Procfile release phase.
-
+release: python manage.py migrate
+6. Static files are collected automatically during deployment using:
+python manage.py collectstatic
 ---
 
 ## Technologies Used
