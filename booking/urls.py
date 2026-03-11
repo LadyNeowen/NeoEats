@@ -8,7 +8,7 @@ from . import views
 urlpatterns = [
     path("", views.book_table, name="book_table"),
     path("my-bookings/", views.my_bookings, name="my_bookings"),
-    path("<int:booking_id>/edit/", views.edit_booking, name="edit_booking"),
-    path("<int:booking_id>/cancel/", views.cancel_booking, name="cancel_booking"),
-    path("<int:booking_id>/delete/", views.delete_booking, name="delete_booking"),
+    path("edit/<int:booking_id>/", views.edit_booking, name="edit_booking"),
+    path("cancel/<int:booking_id>/", views.cancel_booking, name="cancel_booking"),
+    path("delete/<int:booking_id>/", views.delete_booking, name="delete_booking"),
 ]
