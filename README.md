@@ -164,6 +164,16 @@ Relationships:
 * Secure authentication
 * Accessible navigation
 
+### User Features
+* View the restaurant menu.
+* Browse the image gallery.
+* Read information about the restaurant on the About page.
+* Create an account.
+* Make a table booking through the booking form.
+* Recieve confirmation that the booking request was submitted.
+* Manage booking by either cancelling or deleting it permanently.
+* Sign up for the newsletter.
+
 ### Admin Features
 
 The Django Admin interface provides a simple content management system for restaurant staff.
@@ -172,10 +182,10 @@ The Django Admin interface provides a simple content management system for resta
 
 Admin users can manage:
 
-* Image management
+* Image management using Cloudinary.
 * Menu management
 * Content editing
-* Booking administration
+* Booking administration through the Django Admin panel.
 * User accounts
 
 ### Technical Features
@@ -275,8 +285,6 @@ During development, multiple bugs and validation issues were resolved using offi
 browser developer tools, and online developer communities. This includes fixing HTML/CSS validation errors,
 form rendering issues, and responsive layout problems.
 
-
-
 All known critical issues have been resolved.
 
 ---
@@ -373,14 +381,30 @@ CLOUDINARY_URL
 ---
 
 ## Technologies Used
-* Python
+
+### Backend
 * Django
+* Python
+
+### Database
 * PostgreSQL
+
+### Frontend
 * HTML5
 * CSS3
 * Bootstrap
-* Cloudinary
+
+### Deployment
 * Heroku
+* Cloudinary
+* Whitenoise
+
+---
+
+### Security
+
+Sensitive settings such as SECRET_KEY, DATABASE_URL and CLOUDINARY_URL
+are stored in environment variables and not committed to the repository.
 
 ---
 
@@ -448,6 +472,10 @@ Acceptance Criteria:
 ### Forms & Views
 * https://docs.djangoproject.com/en/5.2/topics/forms/
 * https://docs.djangoproject.com/en/5.2/topics/http/shortcuts/#get-object-or-404
+
+### Delete functionality implemented following Django documentation and tutorials
+* https://docs.djangoproject.com/en/6.0/ref/class-based-views/generic-editing/
+* https://www.geeksforgeeks.org/python/delete-view-function-based-views-django/
 
 ### Models
 * https://docs.djangoproject.com/en/5.2/topics/db/models/
